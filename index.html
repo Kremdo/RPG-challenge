@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <title>RPG-challenge</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div><h1>RPG-challenge</h1></div>
-    
+    <div>
+        <h1>RPG-challenge</h1>
+    </div>
+
     <div id="container">
         <header>
             <div class="buttons">
@@ -35,21 +39,21 @@
         </header>
         <section id="arena">
             <section id=player1>
-                
+
                 <div id="img1">
                     <img src="images/human.png" alt="mr.bean">
                     <div class="move">thinking...</div>
                 </div>
-               
+
             </section>
             <div id="bg"><button id="play">VS</button></div>
             <section id=player2>
-                
+
                 <div id="img2">
                     <img src="images/vampire.jpeg" alt="shark">
                     <div class="move">thinking...</div>
                 </div>
-                
+
             </section>
         </section>
         <footer>
@@ -60,21 +64,21 @@
                         Choose name:<br>
                         <input type="text" name="firstname" value="choose your name" maxlength="10"><br>
                         <label>Item:</label>
-                        <select id = "item">
-                            <option value = "boots">boots</option>
-                            <option value = "staff">staff</option>
-                            <option value = "sword">sword</option>
-                            <option value = "bow">bow</option>
+                        <select id="item">
+                            <option value="boots">boots</option>
+                            <option value="staff">staff</option>
+                            <option value="sword">sword</option>
+                            <option value="bow">bow</option>
                         </select><br>
-                        
+
                         <label>Race:</label>
-                        <select id = "race">
-                            <option value = "humans">humans</option>
-                            <option value = "orcs">orcs</option>
-                            <option value = "elves">elves</option>
-                            <option value = "vampires">vampires</option>
+                        <select id="race">
+                            <option value="humans">humans</option>
+                            <option value="orcs">orcs</option>
+                            <option value="elves">elves</option>
+                            <option value="vampires">vampires</option>
                         </select><br><br>
-                        <input class="go_button" type="submit" value="Go"><br>
+                        <input id="goOne" class="go_button" type="submit" value="Go"><br>
                     </fieldset>
                 </form>
             </div>
@@ -86,26 +90,25 @@
                         Choose name:<br>
                         <input type="text" name="firstname" value="choose your name" maxlength="10"><br>
                         <label>Item:</label>
-                        <select id = "item">
-                            <option value = "boots">boots</option>
-                            <option value = "staff">staff</option>
-                            <option value = "sword">sword</option>
-                            <option value = "bow">bow</option>
+                        <select id="item">
+                            <option value="boots">boots</option>
+                            <option value="staff">staff</option>
+                            <option value="sword">sword</option>
+                            <option value="bow">bow</option>
                         </select><br>
-                        
+
                         <label>Race:</label>
-                        <select id = "race">
-                            <option value = "humans">humans</option>
-                            <option value = "orcs">orcs</option>
-                            <option value = "elves">elves</option>
-                            <option value = "vampires">vampires</option>
+                        <select id="race">
+                            <option value="humans">humans</option>
+                            <option value="orcs">orcs</option>
+                            <option value="elves">elves</option>
+                            <option value="vampires">vampires</option>
                         </select><br><br>
-                        <input class="go_button" type="submit" value="Go"><br>
+                        <input id="goTwo" class="go_button" type="submit" value="Go"><br>
                     </fieldset>
                 </form>
             </div>
         </footer>
     </div>
-    
-</body>
-</html>
+    <script type="module" src="gamelogic.js"></script>
+</body></html>
