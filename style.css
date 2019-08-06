@@ -2,7 +2,8 @@ body, #bg {
     background-color:#1c6191;
     color: white;
 }
-section {
+
+#player1, #player2 {
     background: radial-gradient(#83bee6, #206899);
     width: 500px;
     height: 500px;
@@ -11,16 +12,28 @@ div {
     display: flex;
     justify-content: center;
 }
-#arena, header {
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: radial-gradient(#83bee6, #206899);
+} 
+
+header, footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background: radial-gradient(#83bee6, #206899);
+    font-weight: bold;
+    font-size: 24px;
 }
 
-.buttons {
+.buttons, #img1, #img2 {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    align-self: center;
 }
 button {
     color: white;
@@ -28,17 +41,27 @@ button {
     font-weight: bold;
     margin: 5px;
 }
+button.hit {
+    background: radial-gradient(red, #700f0a);
+    border: 1px solid#4f0702;
+    width: 70px;
+    height: 40px;
+}
 button.heal {
     background: radial-gradient(#31c908, #208704);
     border: 1px solid #165704;
+    width: 60px;
+    height: 30px;
 }
 button.yield, #play {
     background: radial-gradient(#206899, #83bee6);
     border: 1px solid #07304d;
+    width: 50px;
+    height: 30px;
 }
-button.hit {
-    background: radial-gradient(red, #700f0a);
-    border: 1px solid#4f0702;
+#arena {
+    display: flex;
+    flex-direction: row;
 }
 
 #play {
@@ -48,3 +71,18 @@ button.hit {
     align-self: center;
     font-size: 32px;
 }
+img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+}
+.go_button {
+    border-radius: 5px;
+    background: radial-gradient(#31c908, #208704);
+    border: 1px solid #165704;
+    width: 60px;
+    height: 40px;
+    justify-self: center;
+}
+

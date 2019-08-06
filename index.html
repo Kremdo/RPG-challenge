@@ -10,42 +10,93 @@
 <body>
     <div><h1>RPG-challenge</h1></div>
     
-    <div id="arena">
-        <section id=player1>
-            <header>
-                <div class="buttons">
-                    <button class="hit">hit</button>
-                    <button class="heal">heal</button>
-                    <button class="yield">yield</button>
-                </div>
-                <div id=stat1></div>
-            </header>
-            <div>
-                <div id="img1"></div>
+    <div id="container">
+        <header>
+            <div class="buttons">
+                <button class="hit">hit</button>
+                <button class="heal">heal</button>
+                <button class="yield">yield</button>
             </div>
-            <footer>
-                <div class="create"></div>
-            </footer>
+            <div id=stat1></div>
+            <div id=stat2></div>
+            <div class="buttons">
+                <button class="hit">hit</button>
+                <button class="heal">heal</button>
+                <button class="yield">yield</button>
+            </div>
+        </header>
+        <section id="arena">
+            <section id=player1>
+                
+                <div id="img1">
+                    <img src="images/human.png" alt="mr.bean">
+                    <div class="move">thinking...</div>
+                </div>
+               
+            </section>
+            <div id="bg"><button id="play">VS</button></div>
+            <section id=player2>
+                
+                <div id="img2">
+                    <img src="images/vampire.jpeg" alt="shark">
+                    <div class="move">thinking...</div>
+                </div>
+                
+            </section>
         </section>
-        <div id="bg"><button id="play">VS</button></div>
-        <section id=player2>
-            <header>
-                <div id=stat2></div>
-                <div class="buttons">
-                    <button class="hit">hit</button>
-                    <button class="heal">heal</button>
-                    <button class="yield">yield</button>
-                </div>
-            </header>
-            <div>
-                <div id="img1"></div>
+        <footer>
+            <div class="create">
+                <form action="">
+                    <fieldset>
+                        <legend>Player1 setup:</legend>
+                        Choose name:<br>
+                        <input type="text" name="firstname" value="choose your name" maxlength="10"><br>
+                        <label>Item:</label>
+                        <select id = "item">
+                            <option value = "boots">boots</option>
+                            <option value = "staff">staff</option>
+                            <option value = "sword">sword</option>
+                            <option value = "bow">bow</option>
+                        </select><br>
+                        
+                        <label>Race:</label>
+                        <select id = "race">
+                            <option value = "humans">humans</option>
+                            <option value = "orcs">orcs</option>
+                            <option value = "elves">elves</option>
+                            <option value = "vampires">vampires</option>
+                        </select><br><br>
+                        <input class="go_button" type="submit" value="Go"><br>
+                    </fieldset>
+                </form>
             </div>
-            <footer>
-                <div class="create">
 
-                </div>
-            </footer>
-        </section>
+            <div class="create">
+                <form action="">
+                    <fieldset>
+                        <legend>Player2 setup:</legend>
+                        Choose name:<br>
+                        <input type="text" name="firstname" value="choose your name" maxlength="10"><br>
+                        <label>Item:</label>
+                        <select id = "item">
+                            <option value = "boots">boots</option>
+                            <option value = "staff">staff</option>
+                            <option value = "sword">sword</option>
+                            <option value = "bow">bow</option>
+                        </select><br>
+                        
+                        <label>Race:</label>
+                        <select id = "race">
+                            <option value = "humans">humans</option>
+                            <option value = "orcs">orcs</option>
+                            <option value = "elves">elves</option>
+                            <option value = "vampires">vampires</option>
+                        </select><br><br>
+                        <input class="go_button" type="submit" value="Go"><br>
+                    </fieldset>
+                </form>
+            </div>
+        </footer>
     </div>
     
 </body>
