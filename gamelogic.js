@@ -20,19 +20,15 @@ function create() {
 
     if (chosenRace1 == "orcs") {
         createdChar1.maxHealth = 100 + ((100 * 40) / 100);
-        console.log(createdChar1.maxHealth);
+        createdChar1.currentHealth = 100 + ((100 * 40) / 100);
 
-    } else {
-        console.log(createdChar1.maxHealth);
+
     }
 
     if (chosenRace2 == "orcs") {
         createdChar2.maxHealth = 100 + ((100 * 40) / 100);
-        console.log(createdChar1.maxHealth);
-    } else {
-        console.log(createdChar2.maxHealth);
+        createdChar2.currentHealth = 100 + ((100 * 40) / 100);
     }
-
 }
 
 
