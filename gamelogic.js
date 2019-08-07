@@ -5,6 +5,7 @@ var chosenRace2;
 var chosenItem2;
 document.getElementById("createbtn").addEventListener("click", create);
 
+
 function create() {
     raceFunctionOne();
     itemFunctionOne();
@@ -17,7 +18,23 @@ function create() {
     document.getElementById("pRace2").innerHTML += chosenRace2;
     document.getElementById("pItem2").innerHTML += chosenItem2;
 
+    if (chosenRace1 == "orcs") {
+        createdChar1.maxHealth = 100 + ((100 * 40) / 100);
+        console.log(createdChar1.maxHealth);
+
+    } else {
+        console.log(createdChar1.maxHealth);
+    }
+
+    if (chosenRace2 == "orcs") {
+        createdChar2.maxHealth = 100 + ((100 * 40) / 100);
+        console.log(createdChar1.maxHealth);
+    } else {
+        console.log(createdChar2.maxHealth);
+    }
+
 }
+
 
 function raceFunctionOne() {
     chosenRace1 = document.getElementById("race1").value;
