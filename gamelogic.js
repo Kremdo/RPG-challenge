@@ -1,10 +1,14 @@
 import Person from "/character.js";
 
-document.getElementById("goOne").addEventListener("submit", go, false);
+document.getElementById("createbtn").addEventListener("click", race);
 
-function go(p) {
-    //var e = document.getElementById("race1"); e.options[e.selectedIndex].text;
-    var chosenRace = document.getElementById("race1").value;
+
+function race() {
+    var chosenRace = document.getElementById("race").value;
     console.log(chosenRace);
-    p.preventDefault();
+}
+
+function item() {
+    var chosenItem = document.getElementById("item").value;
+    console.log(chosenItem);
 }
