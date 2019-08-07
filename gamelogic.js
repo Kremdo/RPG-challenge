@@ -17,7 +17,6 @@ function create() {
     document.getElementById("pRace2").innerHTML += chosenRace2;
     document.getElementById("pItem2").innerHTML += chosenItem2;
 
-
 }
 
 function raceFunctionOne() {
