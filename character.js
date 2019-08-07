@@ -22,8 +22,3 @@ export default function Person(race, item) {
 function displayChar(race, item, maxHealth) {
     return console.log(`I am a ${race}, I wield a ${item}, my total health point are ${maxHealth}`);
 }
-
-switch (this.race) {
-    case = "orc":
-        this.maxHealth = 140;
-}
