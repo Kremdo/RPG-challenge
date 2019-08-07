@@ -29,8 +29,8 @@ function create() {
         createdChar2.maxHealth = 100 + ((100 * 40) / 100);
         createdChar2.currentHealth = 100 + ((100 * 40) / 100);
     }
-    document.getElementsById("footer").style.display = "none";
-    document.getElementsById("header").style.display = "block";
+    document.getElementById("footer").style.display = "none";
+    document.getElementById("header").style.display = "flex";
   
 }
 
