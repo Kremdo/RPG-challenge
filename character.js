@@ -10,7 +10,9 @@
      this.maxHealing = 30;
 
      this.heal = function () {
-         var healValue = Math.floor(Math.random() * 10);
+         var maxHealing = 30;
+         var min = 3
+         var healValue = Math.floor(Math.random() * (maxHealing - min + 1) + min);
          console.log(healValue);
      };
 

@@ -8,7 +8,7 @@ var createdChar2;
 var p1Name;
 var p2Name;
 
-//storing name players input
+
 
 
 
@@ -20,10 +20,12 @@ document.getElementById("createbtn").addEventListener("click", create);
 
 
 function create() {
+    //running functions to get required values
     raceFunctionOne();
     itemFunctionOne();
     raceFunctionTwo();
     itemFunctionTwo();
+    //creating the characters and displaying those values
     createdChar1 = new Person(chosenRace1, chosenItem1);
     createdChar2 = new Person(chosenRace2, chosenItem2);
     document.getElementById("pRace1").innerHTML += chosenRace1;
@@ -31,22 +33,22 @@ function create() {
     document.getElementById("pRace2").innerHTML += chosenRace2;
     document.getElementById("pItem2").innerHTML += chosenItem2;
 
+    //storing name players input and displaying them
     p1Name = document.getElementById("player1Name").value;
     document.getElementById("pName1").innerHTML += p1Name;
 
     p2Name = document.getElementById("player2Name").value;
     document.getElementById("pName2").innerHTML += p2Name;
-    /*
-        //adding click event to action buttons of player 1
-        document.getElementById("phit1").addEventListener("click", function () {});
-        document.getElementById("pheal1").addEventListener("click", createdChar1.heal);
-        document.getElementById("pyield1").addEventListener("click", );
 
-        //adding click event to action buttons of player 2
-        document.getElementById("phit2").addEventListener("click", console.log("Player 2 hits"));
-        document.getElementById("pheal2").addEventListener("click", createdChar2.heal);
-        document.getElementById("pyield2").addEventListener("click", console.log("Player 2 hits"));
-    */
+    //adding click event to action buttons of players
+    document.getElementById("phit1").addEventListener("click", createdChar1.damage);
+    document.getElementById("pheal1").addEventListener("click", createdChar1.heal);
+
+    document.getElementById("phit2").addEventListener("click", createdChar2.damage);
+    document.getElementById("pheal2").addEventListener("click", createdChar2.heal);
+
+
+    //setting health to 140 if orc is chosen as race
     if (chosenRace1 == "orcs") {
         createdChar1.maxHealth = 100 + ((100 * 40) / 100);
         createdChar1.currentHealth = 100 + ((100 * 40) / 100);
@@ -62,10 +64,7 @@ function create() {
 
 }
 
-function test() {
-    console.log("player 1 hits");
-}
-
+// storing chosen races in variables
 function raceFunctionOne() {
     chosenRace1 = document.getElementById("race1").value;
 }
@@ -80,8 +79,4 @@ function raceFunctionTwo() {
 
 function itemFunctionTwo() {
     chosenItem2 = document.getElementById("item2").value;
-}
-
-function playerYield() {
-
 }
