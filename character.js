@@ -16,36 +16,49 @@ export default function Person(race, item) {
     this.maxHealing = 30;
 
 
-
+    //healing function
     this.heal = function () {
+        //making sure player 1 hits his heal button
         if (event.target == document.getElementById("pheal1")) {
             var randomHealValue = Math.floor(Math.random() * (createdChar1.maxHealing - createdChar1.min + 1) + createdChar1.min);
-            console.log(createdChar1.currenthealth)
-
+            //check if item is staff for 20% extra healing
             var healingValue;
             if (item == "staff") {
                 healingValue = randomHealValue + Math.ceil(((randomHealValue * 20) / 100));
-                console.log(healingValue);
+
             } else {
                 healingValue = randomHealValue;
             }
-            console.log(randomHealValue);
-            createdChar1.currenthealth += healingValue;
-            console.log(createdChar1.currenthealth);
+            //making sure currenthealth never exceeds maxhealth
+            if (createdChar1.currenthealth > createdChar1.maxHealth) {
+                createdChar1.currenthealth = createdChar1.maxHealth;
+
+            } else {
+                createdChar1.currenthealth += healingValue;
+                if (createdChar1.currenthealth > createdChar1.maxHealth) {
+                    createdChar1.currenthealth = createdChar1.maxHealth;
+                }
+            }
+            //making sure player 2 pushes his heal button
         } else {
             var randomHealValue = Math.floor(Math.random() * (createdChar2.maxHealing - createdChar2.min + 1) + createdChar2.min);
-            console.log(createdChar2.currenthealth)
-
+            //checking if item is staff for 20% extra healing
             var healingValue;
             if (item == "staff") {
                 healingValue = randomHealValue + Math.ceil(((randomHealValue * 20) / 100));
-                console.log(healingValue);
             } else {
                 healingValue = randomHealValue;
             }
-            console.log(randomHealValue);
-            createdChar2.currenthealth += healingValue;
-            console.log(createdChar2.currenthealth);
+            //making sure currenthealth never exceeds maxhealth
+            if (createdChar2.currenthealth > createdChar2.maxHealth) {
+                createdChar2.currenthealth = createdChar2.maxHealth;
+
+            } else {
+                createdChar2.currenthealth += healingValue;
+                if (createdChar2.currenthealth > createdChar2.maxHealth) {
+                    createdChar2.currenthealth = createdChar2.maxHealth;
+                }
+            }
         }
 
     };
