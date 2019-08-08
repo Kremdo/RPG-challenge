@@ -86,6 +86,7 @@ function create() {
         createdChar2.maxHealth = 100 + ((100 * 40) / 100);
         createdChar2.currenthealthealth = 100 + ((100 * 40) / 100);
         document.getElementById("pic2").src = "images/orc.jpeg";
+        document.getElementById("progress2").style.width = "100%";
     } else {
         createdChar2.currenthealth = 100;
     }
