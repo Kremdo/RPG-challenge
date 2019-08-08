@@ -7,12 +7,8 @@ var createdChar1;
 var createdChar2;
 var p1Name;
 var p2Name;
-
-
-
-
-
-
+var healthPercentage1;
+var healthPercentage2;
 
 //added click event to the create button
 document.getElementById("createbtn").addEventListener("click", create);
@@ -75,10 +71,12 @@ function create() {
     //setting health to 140 if orc is chosen as race
     if (chosenRace1 == "orcs") {
         createdChar1.maxHealth = 100 + ((100 * 40) / 100);
-        createdChar1.currenthealth = 100;
+        createdChar1.currenthealth = 10;
+        healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
         document.getElementById("pic1").src = "images/orc.jpeg";
     } else {
         createdChar1.currenthealth = 100;
+        healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth)
     }
 
     if (chosenRace2 == "orcs") {
@@ -94,7 +92,7 @@ function create() {
     document.getElementById("player2").style.visibility = "visible";
     document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
     document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
-    document.getElementById("bar1").style.width = createdChar1.currenthealth + "%";
+    document.getElementById("bar1").style.width = healthPercentage1 + "%";
     document.getElementById("bar2").style.width = createdChar2.currenthealth + "%";
 
     switch (chosenItem1) {
@@ -134,6 +132,7 @@ export {
 export {
     createdChar2
 }
+
 
 // storing chosen races in variables
 function raceFunctionOne() {
