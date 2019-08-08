@@ -39,6 +39,8 @@ export default function Person(race, item) {
                     createdChar1.currenthealth = createdChar1.maxHealth;
                 }
             }
+            document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
+            document.getElementById("bar1").style.width = createdChar1.currenthealth + "%";
             //making sure player 2 pushes his heal button
         } else {
             var randomHealValue = Math.floor(Math.random() * (createdChar2.maxHealing - createdChar2.min + 1) + createdChar2.min);
@@ -57,8 +59,11 @@ export default function Person(race, item) {
                 createdChar2.currenthealth += healingValue;
                 if (createdChar2.currenthealth > createdChar2.maxHealth) {
                     createdChar2.currenthealth = createdChar2.maxHealth;
+
                 }
             }
+            document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
+            document.getElementById("bar2").style.width = createdChar2.currenthealth + "%";
         }
 
     };
