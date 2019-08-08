@@ -5,6 +5,14 @@ var chosenRace2;
 var chosenItem2;
 var createdChar1;
 var createdChar2;
+var p1Name;
+var p2Name;
+
+//storing name players input
+
+
+
+
 
 //added click event to the create button
 document.getElementById("createbtn").addEventListener("click", create);
@@ -23,16 +31,22 @@ function create() {
     document.getElementById("pRace2").innerHTML += chosenRace2;
     document.getElementById("pItem2").innerHTML += chosenItem2;
 
-    //adding click event to action buttons of player 1
-    document.getElementById("phit1").addEventListener("click", function () {});
-    document.getElementById("pheal1").addEventListener("click", createdChar1.heal);
-    document.getElementById("pyield1").addEventListener("click", );
+    p1Name = document.getElementById("player1Name").value;
+    document.getElementById("pName1").innerHTML += p1Name;
 
-    //adding click event to action buttons of player 2
-    document.getElementById("phit2").addEventListener("click", console.log("Player 2 hits"));
-    document.getElementById("pheal2").addEventListener("click", createdChar2.heal);
-    document.getElementById("pyield2").addEventListener("click", console.log("Player 2 hits"));
+    p2Name = document.getElementById("player2Name").value;
+    document.getElementById("pName2").innerHTML += p2Name;
+    /*
+        //adding click event to action buttons of player 1
+        document.getElementById("phit1").addEventListener("click", function () {});
+        document.getElementById("pheal1").addEventListener("click", createdChar1.heal);
+        document.getElementById("pyield1").addEventListener("click", );
 
+        //adding click event to action buttons of player 2
+        document.getElementById("phit2").addEventListener("click", console.log("Player 2 hits"));
+        document.getElementById("pheal2").addEventListener("click", createdChar2.heal);
+        document.getElementById("pyield2").addEventListener("click", console.log("Player 2 hits"));
+    */
     if (chosenRace1 == "orcs") {
         createdChar1.maxHealth = 100 + ((100 * 40) / 100);
         createdChar1.currentHealth = 100 + ((100 * 40) / 100);
@@ -68,6 +82,6 @@ function itemFunctionTwo() {
     chosenItem2 = document.getElementById("item2").value;
 }
 
-function yield() {
+function playerYield() {
 
 }

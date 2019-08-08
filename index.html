@@ -43,7 +43,7 @@
                     <fieldset>
                         <legend>Player1 setup:</legend>
                         Choose name:<br>
-                        <input type="text" name="firstname" value="choose your name" maxlength="10"><br>
+                        <input id="player1Name" type="text" name="firstname" placeholder="choose your name" maxlength="10"><br>
                         <label>Item:</label>
                         <select id="item1">
                             <option value="boots">boots</option>
@@ -69,7 +69,7 @@
                     <fieldset>
                         <legend>Player2 setup:</legend>
                         Choose name:<br>
-                        <input type="text" name="firstname" value="choose your name" maxlength="10"><br>
+                        <input id="player2Name" type="text" name="firstname" placeholder="choose your name" maxlength="10"><br>
                         <label>Item:</label>
                         <select id="item2">
                             <option value="boots">boots</option>
@@ -92,8 +92,10 @@
         <section id="arena">
             <section id="player1">
                 <div>
-                    <h4>Health: </h4>        
-                    <div id="progress1"><div id="bar1">10%</div></div>            
+                    <h4>Health: </h4>
+                    <div id="progress1">
+                        <div id="bar1">10%</div>
+                    </div>
                 </div>
                 <div id="img1">
                     <img src="images/" alt="">
@@ -105,7 +107,9 @@
             <section id="player2">
                 <div>
                     <h4>Health: </h4>
-                    <div id="progress2"><div id="bar2">20%</div></div>
+                    <div id="progress2">
+                        <div id="bar2">20%</div>
+                    </div>
                 </div>
                 <div id="img2">
                     <img src="images/" alt="">
@@ -114,7 +118,7 @@
 
             </section>
         </section>
-        
+
     </div>
     <script type="module" src="gamelogic.js"></script>
     <script type="module" src="character.js"></script>
