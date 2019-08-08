@@ -75,7 +75,7 @@ function create() {
         healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
         document.getElementById("pic1").src = "images/orc.jpeg";
         document.getElementById("progress1").style.width = "100%";
-        
+
 
     } else {
         createdChar1.currenthealth = 100;
@@ -84,7 +84,7 @@ function create() {
 
     if (chosenRace2 == "orcs") {
         createdChar2.maxHealth = 100 + ((100 * 40) / 100);
-        createdChar2.currenthealthealth = 100 + ((100 * 40) / 100);
+        createdChar2.currenthealth = 100 + ((100 * 40) / 100);
         document.getElementById("pic2").src = "images/orc.jpeg";
         document.getElementById("progress2").style.width = "100%";
     } else {
