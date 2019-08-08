@@ -71,7 +71,7 @@ function create() {
     //setting health to 140 if orc is chosen as race
     if (chosenRace1 == "orcs") {
         createdChar1.maxHealth = 100 + ((100 * 40) / 100);
-        createdChar1.currenthealth = 10;
+        createdChar1.currenthealth = 100 + ((100 * 40) / 100);
         healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
         document.getElementById("pic1").src = "images/orc.jpeg";
     } else {
