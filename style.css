@@ -75,13 +75,19 @@ button.yield, #play {
 #arena {
     display: flex;
     flex-direction: row;
+    justify-items: center;
 }
-#player1 > div, #player2 > div {
-    justify-content: space-between;
+#player1 > div:first-child, #player2 > div:first-child {
+    display: flex;
+    flex-direction: column;
     width: 80%;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
+}
+#player1 > div:first-child {
+    display: flex;
+    justify-content: flex-end;
 }
 h4 {
     margin: 0;
@@ -91,7 +97,6 @@ h4 {
     height: 30px;
     background-color: grey;
     justify-content: flex-start;
-    
   }
   
 #bar1, #bar2 {

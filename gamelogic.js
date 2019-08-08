@@ -47,16 +47,44 @@ function create() {
     document.getElementById("phit2").addEventListener("click", createdChar2.damage);
     document.getElementById("pheal2").addEventListener("click", createdChar2.heal);
 
+    //adding race picture
+    switch (chosenRace1) {
+        case "humans":
+            document.getElementById("pic1").src = "images/human.png";   
+            break;
+        case "elves":
+            document.getElementById("pic1").src = "images/elf.jpeg";   
+            break;
+        case "vampires":
+            document.getElementById("pic1").src = "images/vampire.jpeg";   
+            break;
+        break;
+    }
+
+    switch (chosenRace2) {
+        case "humans":
+            document.getElementById("pic2").src = "images/human.png";   
+            break;
+        case "elves":
+            document.getElementById("pic2").src = "images/elf.jpeg";   
+            break;
+        case "vampires":
+            document.getElementById("pic2").src = "images/vampire.jpeg";   
+            break;
+        break;
+    }
 
     //setting health to 140 if orc is chosen as race
     if (chosenRace1 == "orcs") {
         createdChar1.maxHealth = 100 + ((100 * 40) / 100);
         createdChar1.currentHealth = 100 + ((100 * 40) / 100);
+        document.getElementById("pic1").src = "images/orc.jpeg";
     }
 
     if (chosenRace2 == "orcs") {
         createdChar2.maxHealth = 100 + ((100 * 40) / 100);
         createdChar2.currentHealth = 100 + ((100 * 40) / 100);
+        document.getElementById("pic2").src = "images/orc.jpeg";
     }
     document.getElementById("footer").style.display = "none";
     document.getElementById("header").style.display = "flex";
