@@ -58,7 +58,6 @@ function create() {
         case "vampires":
             document.getElementById("pic1").src = "images/vampire.jpeg";
             break;
-            break;
     }
 
     switch (chosenRace2) {
@@ -70,7 +69,6 @@ function create() {
             break;
         case "vampires":
             document.getElementById("pic2").src = "images/vampire.jpeg";
-            break;
             break;
     }
 
@@ -99,6 +97,35 @@ function create() {
     document.getElementById("bar1").style.width = createdChar1.currenthealth + "%";
     document.getElementById("bar2").style.width = createdChar2.currenthealth + "%";
 
+    switch (chosenItem1) {
+        case "boots":
+            document.getElementById("item1pic").src = "images/boots.jpeg";
+            break;
+        case "staff":
+            document.getElementById("item1pic").src = "images/staff.jpeg";
+            break;
+        case "sword":
+            document.getElementById("item1pic").src = "images/sword.png";
+            break;
+        case "bow":
+            document.getElementById("item1pic").src = "images/bow.jpeg";
+            break;
+    }
+
+    switch (chosenItem2) {
+        case "boots":
+            document.getElementById("item2pic").src = "images/boots.jpeg";
+            break;
+        case "staff":
+            document.getElementById("item2pic").src = "images/staff.jpeg";
+            break;
+        case "sword":
+            document.getElementById("item2pic").src = "images/sword.png";
+            break;
+        case "bow":
+            document.getElementById("item2pic").src = "images/bow.jpeg";
+            break;
+    }
 }
 
 export {

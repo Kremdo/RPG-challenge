@@ -123,6 +123,18 @@ img {
     height: 300px;
     margin-top: 20px;
 }
+#item1pic {
+    border-radius: 50%;
+    background-color: grey;
+    width: 30px;
+    height: 30px;
+}
+#item2pic {
+    border-radius: 50%;
+    background-color: grey;
+    width: 30px;
+    height: 30px;
+}
 #createbtn {
     border-radius: 5px;
     background: radial-gradient(#31c908, #208704);
