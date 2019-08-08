@@ -1,30 +1,29 @@
-//Use this script to generate your character
-export default function Person(race,item){
-    this.race = race;
-    this.item = item;
-    this.currenthealth = 100;
-    this.maxHealth = 100;
-    
-    this.min = 3;
-    this.maxDamage = 20;
-    this.maxHealing = 30;
+ //Use this script to generate your character
+ export default function Person(race, item) {
+     this.race = race;
+     this.item = item;
+     this.currenthealth = 100;
+     this.maxHealth = 100;
 
-    this.heal = function(){};
+     this.min = 3;
+     this.maxDamage = 20;
+     this.maxHealing = 30;
 
-    this.damage = function(){};
+     this.heal = function () {
+         var healValue = Math.floor(Math.random() * 10);
+         console.log(healValue);
+     };
 
-    this.totalDamage = this.damage();
+     this.damage = function () {};
 
-    displayChar(this.race,this.item,this.maxHealth);
-}
+     this.totalDamage = this.damage();
 
-//Delete this functiom
-function displayChar(race,item,maxHealth){
-    return console.log(`I am a ${race}, I wield a ${item}, my total health point are ${maxHealth}`);
-}
+     displayChar(this.race, this.item, this.maxHealth);
 
-function hideShow() {
-    document.getElementsByTagName("header").innerHTML = document.getElementsByTagName("footer").innerHTML;
-    console.log(document.getElementsByTagName("header").innerHTML = document.getElementsByTagName("footer").innerHTML);
-}
-document.getElementById("createbtn").addEventListener("click", hideShow);
+ }
+
+
+ //Delete this functiom
+ function displayChar(race, item, maxHealth) {
+     return console.log(`I am a ${race}, I wield a ${item}, my total health point are ${maxHealth}`);
+ }
