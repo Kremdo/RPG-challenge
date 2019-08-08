@@ -50,28 +50,28 @@ function create() {
     //adding race picture
     switch (chosenRace1) {
         case "humans":
-            document.getElementById("pic1").src = "images/human.png";   
+            document.getElementById("pic1").src = "images/human.png";
             break;
         case "elves":
-            document.getElementById("pic1").src = "images/elf.jpeg";   
+            document.getElementById("pic1").src = "images/elf.jpeg";
             break;
         case "vampires":
-            document.getElementById("pic1").src = "images/vampire.jpeg";   
+            document.getElementById("pic1").src = "images/vampire.jpeg";
             break;
-        break;
+            break;
     }
 
     switch (chosenRace2) {
         case "humans":
-            document.getElementById("pic2").src = "images/human.png";   
+            document.getElementById("pic2").src = "images/human.png";
             break;
         case "elves":
-            document.getElementById("pic2").src = "images/elf.jpeg";   
+            document.getElementById("pic2").src = "images/elf.jpeg";
             break;
         case "vampires":
-            document.getElementById("pic2").src = "images/vampire.jpeg";   
+            document.getElementById("pic2").src = "images/vampire.jpeg";
             break;
-        break;
+            break;
     }
 
     //setting health to 140 if orc is chosen as race
@@ -79,16 +79,23 @@ function create() {
         createdChar1.maxHealth = 100 + ((100 * 40) / 100);
         createdChar1.currentHealth = 100 + ((100 * 40) / 100);
         document.getElementById("pic1").src = "images/orc.jpeg";
+    } else {
+        createdChar1.currentHealth = 100;
     }
 
     if (chosenRace2 == "orcs") {
         createdChar2.maxHealth = 100 + ((100 * 40) / 100);
         createdChar2.currentHealth = 100 + ((100 * 40) / 100);
         document.getElementById("pic2").src = "images/orc.jpeg";
+    } else {
+        createdChar2.currentHealth = 100;
     }
     document.getElementById("footer").style.display = "none";
     document.getElementById("header").style.display = "flex";
-
+    document.getElementById("bar1").innerHTML = createdChar1.currentHealth;
+    document.getElementById("bar2").innerHTML = createdChar2.currentHealth;
+    document.getElementById("bar1").style.width = createdChar1.currentHealth + "%";
+    document.getElementById("bar2").style.width = createdChar2.currentHealth + "%";
 
 }
 
