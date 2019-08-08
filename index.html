@@ -17,9 +17,9 @@
     <div id="container">
         <header id="header">
             <div class="buttons">
-                <button class="hit">hit</button>
-                <button class="heal">heal</button>
-                <button class="yield">yield</button>
+                <button id="phit1" class="hit">hit</button>
+                <button id="pheal1" class="heal">heal</button>
+                <button id="pyield1" class="yield">yield</button>
             </div>
             <div id=stat1>
                 <span id="pName1">Name: </span>
@@ -32,9 +32,9 @@
                 <span id="pItem2">Items: </span>
             </div>
             <div class="buttons">
-                <button class="hit">hit</button>
-                <button class="heal">heal</button>
-                <button class="yield">yield</button>
+                <button id="phit2" class="hit">hit</button>
+                <button id="pheal2" class="heal">heal</button>
+                <button id="pyield2" class="yield">yield</button>
             </div>
         </header>
         <footer id="footer">
@@ -91,7 +91,10 @@
         </footer>
         <section id="arena">
             <section id="player1">
-                <div>Health: </div>
+                <div>
+                    <h4>Health: </h4>        
+                    <div id="progress1"><div id="bar1">10%</div></div>            
+                </div>
                 <div id="img1">
                     <img src="images/" alt="">
                     <div class="move">thinking...</div>
@@ -100,7 +103,10 @@
             </section>
             <div id="bg"><button id="play">VS</button></div>
             <section id="player2">
-                <div>Health: </div>
+                <div>
+                    <h4>Health: </h4>
+                    <div id="progress2"><div id="bar2">20%</div></div>
+                </div>
                 <div id="img2">
                     <img src="images/" alt="">
                     <div class="move">thinking...</div>
