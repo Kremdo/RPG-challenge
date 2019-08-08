@@ -77,28 +77,35 @@ function create() {
     //setting health to 140 if orc is chosen as race
     if (chosenRace1 == "orcs") {
         createdChar1.maxHealth = 100 + ((100 * 40) / 100);
-        createdChar1.currentHealth = 100 + ((100 * 40) / 100);
+        createdChar1.currenthealth = 100 + ((100 * 40) / 100);
         document.getElementById("pic1").src = "images/orc.jpeg";
     } else {
-        createdChar1.currentHealth = 100;
+        createdChar1.currenthealth = 100;
     }
 
     if (chosenRace2 == "orcs") {
         createdChar2.maxHealth = 100 + ((100 * 40) / 100);
-        createdChar2.currentHealth = 100 + ((100 * 40) / 100);
+        createdChar2.currenthealthealth = 100 + ((100 * 40) / 100);
         document.getElementById("pic2").src = "images/orc.jpeg";
     } else {
-        createdChar2.currentHealth = 100;
+        createdChar2.currenthealth = 100;
     }
     document.getElementById("footer").style.display = "none";
     document.getElementById("header").style.display = "flex";
     document.getElementById("player1").style.visibility = "visible";
     document.getElementById("player2").style.visibility = "visible";
-    document.getElementById("bar1").innerHTML = createdChar1.currentHealth;
-    document.getElementById("bar2").innerHTML = createdChar2.currentHealth;
-    document.getElementById("bar1").style.width = createdChar1.currentHealth + "%";
-    document.getElementById("bar2").style.width = createdChar2.currentHealth + "%";
+    document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
+    document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
+    document.getElementById("bar1").style.width = createdChar1.currenthealth + "%";
+    document.getElementById("bar2").style.width = createdChar2.currenthealth + "%";
 
+}
+
+export {
+    createdChar1
+}
+export {
+    createdChar2
 }
 
 // storing chosen races in variables
