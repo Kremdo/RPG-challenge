@@ -74,6 +74,9 @@ function create() {
         createdChar1.currenthealth = 100 + ((100 * 40) / 100);
         healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
         document.getElementById("pic1").src = "images/orc.jpeg";
+        document.getElementById("progress1").style.width = "100%";
+        
+
     } else {
         createdChar1.currenthealth = 100;
         healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth)
