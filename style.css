@@ -4,6 +4,7 @@ body, #bg {
 }
 
 #player1, #player2 {
+    visibility: hidden;
     background: radial-gradient(#83bee6, #206899);
     width: 500px;
     height: 500px;
@@ -100,16 +101,12 @@ h4 {
   }
   
 #bar1, #bar2 {
-    width: 10%;
     height: 30px;
     background-color: #4CAF50;
     text-align: center; /* To center it horizontally (if you want) */
     line-height: 30px; /* To center it vertically */
     color: white; 
     font-size: 18px;
-  }
-  #bar2 {
-    width: 20%;
   }
 
 #play {

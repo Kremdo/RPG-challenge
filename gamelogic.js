@@ -92,6 +92,8 @@ function create() {
     }
     document.getElementById("footer").style.display = "none";
     document.getElementById("header").style.display = "flex";
+    document.getElementById("player1").style.visibility = "visible";
+    document.getElementById("player2").style.visibility = "visible";
     document.getElementById("bar1").innerHTML = createdChar1.currentHealth;
     document.getElementById("bar2").innerHTML = createdChar2.currentHealth;
     document.getElementById("bar1").style.width = createdChar1.currentHealth + "%";
