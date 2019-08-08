@@ -9,11 +9,16 @@
      this.maxDamage = 20;
      this.maxHealing = 30;
 
+
+
      this.heal = function () {
-         var maxHealing = 30;
-         var min = 3
-         var healValue = Math.floor(Math.random() * (maxHealing - min + 1) + min);
-         console.log(healValue);
+         var randomHealValue = Math.floor(Math.random() * (createdChar1.maxHealing - createdChar1.min + 1) + createdChar1.min);
+         var healingValue;
+         if (item == "staff") {
+             healingValue = randomHealValue + Math.ceil(((randomHealValue * 20) / 100));
+             console.log(healingValue);
+         }
+         console.log(randomHealValue);
      };
 
      this.damage = function () {};
