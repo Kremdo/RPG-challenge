@@ -6,8 +6,8 @@ body, #bg {
 #player1, #player2 {
     visibility: hidden;
     background: radial-gradient(#83bee6, #206899);
-    width: 500px;
-    height: 500px;
+    width: 40%;
+    height: 40%;
     font-size: 22px;
 }
 div {
