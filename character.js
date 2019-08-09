@@ -32,6 +32,8 @@ export default function Person(race, item) {
             } else {
                 healingValue = randomHealValue;
             }
+            createdChar1.currenthealth += healingValue;
+            healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
 
             //making sure currenthealth never exceeds maxhealth
             if (createdChar1.currenthealth > createdChar1.maxHealth) {
@@ -39,13 +41,6 @@ export default function Person(race, item) {
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
                 console.log(healthPercentage1)
 
-            } else {
-                createdChar1.currenthealth += healingValue;
-                healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
-                if (createdChar1.currenthealth > createdChar1.maxHealth) {
-                    createdChar1.currenthealth = createdChar1.maxHealth;
-                    healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
-                }
             }
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
@@ -59,19 +54,13 @@ export default function Person(race, item) {
             } else {
                 healingValue = randomHealValue;
             }
+            createdChar2.currenthealth += healingValue;
+            healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
             //making sure currenthealth never exceeds maxhealth
             if (createdChar2.currenthealth > createdChar2.maxHealth) {
                 createdChar2.currenthealth = createdChar2.maxHealth;
                 healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
 
-            } else {
-                createdChar2.currenthealth += healingValue;
-                healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
-                if (createdChar2.currenthealth > createdChar2.maxHealth) {
-                    createdChar2.currenthealth = createdChar2.maxHealth;
-                    healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
-
-                }
             }
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
@@ -79,7 +68,21 @@ export default function Person(race, item) {
 
     };
 
-    this.damage = function () {};
+    this.damage = function () {
+
+        if (event.target == document.getElementById("phit1")) {
+            var randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
+            createdChar2.currenthealth -= randomDamage;
+            healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
+
+            document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
+            document.getElementById("bar2").style.width = healthPercentage2 + "%";
+
+        } else {
+
+        }
+
+    };
 
     this.totalDamage = this.damage();
 
