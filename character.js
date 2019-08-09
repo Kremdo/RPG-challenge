@@ -7,6 +7,7 @@ import {
 
 var healthPercentage1;
 var healthPercentage2;
+
 //Use this script to generate your character
 export default function Person(race, item) {
     this.race = race;
@@ -71,7 +72,7 @@ export default function Person(race, item) {
         var chance = Math.random();
         if (event.target == document.getElementById("phit1")) {
             var randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
-            console.log(randomDamage);
+
 
 
             switch (createdChar1.item) {
@@ -79,14 +80,31 @@ export default function Person(race, item) {
                     randomDamage += Math.ceil(randomDamage * 0.3);
                     break;
 
+                case "bow":
+                    if (chance < 0.9) {
+                        let i = 0;
+                        while (i < 1) {
+
+                            createdChar2.currenthealth -= randomDamage;
+                            healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
+
+                            document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
+                            document.getElementById("bar2").style.width = healthPercentage2 + "%";
+                            console.log(randomDamage);
+
+                            i++;
+
+                            randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
+                        }
+                    }
+                    break;
             }
 
             switch (createdChar2.item) {
                 case "boots":
                     if (chance < 0.3) {
                         randomDamage = 0;
-                        console.log(chance);
-                        console.log("player 2 dogded!");
+
                     }
                     break;
             }
@@ -99,12 +117,11 @@ export default function Person(race, item) {
 
         } else if (event.target == document.getElementById("phit2")) {
             var randomDamage = Math.floor(Math.random() * (createdChar2.maxDamage - createdChar2.min + 1) + createdChar2.min);
-            console.log(randomDamage);
 
             switch (createdChar2.item) {
                 case "sword":
                     randomDamage += Math.ceil(randomDamage * 0.3);
-                    console.log(randomDamage);
+
                     break;
             }
 
@@ -112,8 +129,26 @@ export default function Person(race, item) {
                 case "boots":
                     if (chance < 0.3) {
                         randomDamage = 0;
-                        console.log(chance);
-                        console.log("player 1 dogded!");
+
+                    }
+                    break;
+
+                case "bow":
+                    if (chance < 0.9) {
+                        let i = 0;
+                        while (i < 1) {
+
+                            createdChar2.currenthealth -= randomDamage;
+                            healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
+
+                            document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
+                            document.getElementById("bar2").style.width = healthPercentage2 + "%";
+                            console.log(randomDamage);
+
+                            i++;
+
+                            randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
+                        }
                     }
                     break;
             }
@@ -128,6 +163,7 @@ export default function Person(race, item) {
         }
 
     };
+
 
     this.totalDamage = this.damage();
 
