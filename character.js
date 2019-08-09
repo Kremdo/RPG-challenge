@@ -155,7 +155,19 @@ export default function Person(race, item) {
             var randomDamage = Math.floor(Math.random() * (createdChar2.maxDamage - createdChar2.min + 1) + createdChar2.min);
 
             if (createdChar2.race == "vampires") {
+                createdChar2.currenthealth = createdChar2.currenthealth + Math.floor(createdChar1.currenthealth * 0.1);
                 createdChar1.currenthealth = createdChar1.currenthealth - Math.floor(createdChar1.currenthealth * 0.1);
+                healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
+                console.log(createdChar1.currenthealth);
+                console.log(createdChar2.currenthealth);
+                if (createdChar2.currenthealth > createdChar2.maxHealth) {
+                    createdChar2.currenthealth = createdChar2.maxHealth;
+                    healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
+                                       
+                };
+                console.log(createdChar2.currenthealth);
+                document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
+                document.getElementById("bar2").style.width = healthPercentage2 + "%";
             }
             
 
