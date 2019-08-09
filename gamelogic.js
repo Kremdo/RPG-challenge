@@ -39,9 +39,13 @@ function create() {
     //adding click event to action buttons of players
     document.getElementById("phit1").addEventListener("click", createdChar1.damage);
     document.getElementById("pheal1").addEventListener("click", createdChar1.heal);
+    document.getElementById("pyield1").addEventListener("click", pyield);
+
 
     document.getElementById("phit2").addEventListener("click", createdChar2.damage);
     document.getElementById("pheal2").addEventListener("click", createdChar2.heal);
+    document.getElementById("pyield2").addEventListener("click", pyield);
+
 
     //adding race picture
     switch (chosenRace1) {
@@ -129,6 +133,18 @@ function create() {
             break;
     }
 }
+
+function pyield () {
+    if (event.target == document.getElementById("pyield1")) {
+        alert (p1Name + " yields" + "..." + p2Name + " WINS!");
+        document.location.reload();
+    } else if (event.target == document.getElementById("pyield2")) {
+        alert (p2Name + " yields" + "..." + p1Name + " WINS!");
+        document.location.reload();
+    }
+}
+
+
 
 export {
     createdChar1

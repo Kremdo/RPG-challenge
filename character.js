@@ -135,20 +135,45 @@ export default function Person(race, item) {
                     }
                     break;
             }
-console.log(randomDamage);
+
             //adjust player 2 health and push it to html
             if (createdChar2.race == "humans") {
                 randomDamage -= Math.ceil(randomDamage * 0.2);
-console.log(randomDamage);
+
                 createdChar2.currenthealth -= randomDamage;
                 healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth)
-            } else {
+            } else if (createdChar2.race != "elves") {
                 createdChar2.currenthealth -= randomDamage;
                 healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
             }
-console.log(createdChar2.currenthealth);
+
+            if (createdChar2.race == "elves") {
+                console.log(randomDamage);
+                if (chance < 0.3) {
+                    randomDamage = Math.ceil(randomDamage * 0.5);
+                    console.log(randomDamage);
+                    console.log("reflected damage " + randomDamage);
+                    createdChar1.currenthealth -= randomDamage;
+                    healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth)
+                    document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
+                    document.getElementById("bar1").style.width = healthPercentage1 + "%";
+                    
+                    console.log("P1 current health " + createdChar1.currenthealth);
+                    randomDamage = 0;
+                    console.log(randomDamage);
+
+                } else {
+                    createdChar2.currenthealth -= randomDamage;
+                    healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
+                    document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
+                    document.getElementById("bar2").style.width = healthPercentage2 + "%";
+                    console.log("P2 curr health" + createdChar2.currenthealth);
+                }
+            }
+
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
+           
 
     
 
@@ -211,20 +236,44 @@ console.log(createdChar2.currenthealth);
                     }
                     break;
             }
-console.log(randomDamage);
+
 
             //calculate done damage and push to html
             
             if (createdChar1.race == "humans") {
                 randomDamage -= Math.ceil(randomDamage * 0.2);
-console.log(randomDamage);
+
                 createdChar1.currenthealth -= randomDamage;
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth)
-            } else {
+            } else if (createdChar1.race != "elves") {
                 createdChar1.currenthealth -= randomDamage;
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
             }
-console.log(createdChar1.currenthealth);
+
+            if (createdChar1.race == "elves") {
+                console.log(randomDamage);
+                if (chance < 0.3) {
+                    randomDamage = Math.ceil(randomDamage * 0.5);
+                    console.log(randomDamage);
+                    console.log("reflected damage " + randomDamage);
+                    createdChar2.currenthealth -= randomDamage;
+                    healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth)
+                    document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
+                    document.getElementById("bar2").style.width = healthPercentage2 + "%";
+                    
+                    console.log("P2 current health " + createdChar2.currenthealth);
+                    //randomDamage = 0;
+                    console.log(randomDamage);
+
+                } else {
+                    createdChar1.currenthealth -= randomDamage;
+                    healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
+                    document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
+                    document.getElementById("bar1").style.width = healthPercentage1 + "%";
+                    console.log("P1 curr health" + createdChar1.currenthealth);
+                }
+            }
+
 
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
