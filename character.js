@@ -69,19 +69,26 @@ export default function Person(race, item) {
     };
 
     this.damage = function () {
+        //calculate var for all chance percentages
         var chance = Math.random();
+
+        //check if player 1 pushes button
         if (event.target == document.getElementById("phit1")) {
+
+            //calculate random damage between max and min
             var randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
 
 
-
+            //check what item player 1 is holding
             switch (createdChar1.item) {
+                //if player 1 holds sword, add 30% damage
                 case "sword":
                     randomDamage += Math.ceil(randomDamage * 0.3);
                     break;
 
                 case "bow":
-                    if (chance < 0.9) {
+                    //if player 1 holds bow 30% chance to hit again
+                    if (chance < 0.3) {
                         let i = 0;
                         while (i < 1) {
 
@@ -99,7 +106,7 @@ export default function Person(race, item) {
                     }
                     break;
             }
-
+            //check if player 2 is holding boots if so add dodge chance for player 2
             switch (createdChar2.item) {
                 case "boots":
                     if (chance < 0.3) {
@@ -109,32 +116,28 @@ export default function Person(race, item) {
                     break;
             }
 
+            //adjust player 2 health and push it to html
             createdChar2.currenthealth -= randomDamage;
             healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
 
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
 
+            //check if player 2 hits button
         } else if (event.target == document.getElementById("phit2")) {
+            //calculate random damage between min and max values
             var randomDamage = Math.floor(Math.random() * (createdChar2.maxDamage - createdChar2.min + 1) + createdChar2.min);
 
+            //check what item player 2 is using 
             switch (createdChar2.item) {
+                //if player 2 is holding sword, add 30% damage
                 case "sword":
                     randomDamage += Math.ceil(randomDamage * 0.3);
-
-                    break;
-            }
-
-            switch (createdChar1.item) {
-                case "boots":
-                    if (chance < 0.3) {
-                        randomDamage = 0;
-
-                    }
                     break;
 
+                    //if player 2 is holding bow, add 30% chance to attack again
                 case "bow":
-                    if (chance < 0.9) {
+                    if (chance < 0.3) {
                         let i = 0;
                         while (i < 1) {
 
@@ -153,6 +156,17 @@ export default function Person(race, item) {
                     break;
             }
 
+            //check if player 1 is using boots and if so add 30% dodge chance
+            switch (createdChar1.item) {
+                case "boots":
+                    if (chance < 0.3) {
+                        randomDamage = 0;
+
+                    }
+                    break;
+            }
+
+            //calculate done damage and push to html
             createdChar1.currenthealth -= randomDamage;
             healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
 
