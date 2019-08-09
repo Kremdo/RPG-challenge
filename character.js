@@ -72,12 +72,21 @@ export default function Person(race, item) {
         //calculate var for all chance percentages
         var chance = Math.random();
 
+        
+
         //check if player 1 pushes button
         if (event.target == document.getElementById("phit1")) {
 
+            if (createdChar1.race == "vampires") {
+                createdChar2.currenthealth = createdChar2.currenthealth - Math.floor(createdChar2.currenthealth * 0.1);
+                
+            }
+            
             //calculate random damage between max and min
             var randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
-
+            
+            
+           
 
             //check what item player 1 is holding
             switch (createdChar1.item) {
@@ -127,6 +136,11 @@ export default function Person(race, item) {
         } else if (event.target == document.getElementById("phit2")) {
             //calculate random damage between min and max values
             var randomDamage = Math.floor(Math.random() * (createdChar2.maxDamage - createdChar2.min + 1) + createdChar2.min);
+
+            if (createdChar2.race == "vampires") {
+                createdChar1.currenthealth = createdChar1.currenthealth - Math.floor(createdChar1.currenthealth * 0.1);
+            }
+            
 
             //check what item player 2 is using 
             switch (createdChar2.item) {

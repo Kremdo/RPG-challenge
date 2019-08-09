@@ -54,7 +54,7 @@ button {
 }
 button.hit {
     background: radial-gradient(red, #700f0a);
-    border: 1px solid#4f0702;
+    border: 1px solid #4f0702;
     width: 70px;
     height: 40px;
     font-size: 20px;
@@ -76,7 +76,7 @@ button.yield, #play {
 #arena {
     display: flex;
     flex-direction: row;
-    justify-items: center;
+    justify-content: center;
 }
 #player1 > div:first-child, #player2 > div:first-child {
     display: flex;
@@ -125,13 +125,13 @@ h4 {
     margin-top: 20px;
 }
 #item1pic {
-    background-color: grey;
+    
     width: 60px;
     height: 60px;
     margin: 0;
 }
 #item2pic {
-    background-color: grey;
+    
     width: 60px;
     height: 60px;
     margin: 0;
