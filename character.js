@@ -39,7 +39,6 @@ export default function Person(race, item) {
             if (createdChar1.currenthealth > createdChar1.maxHealth) {
                 createdChar1.currenthealth = createdChar1.maxHealth;
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
-                console.log(healthPercentage1)
 
             }
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
@@ -72,13 +71,37 @@ export default function Person(race, item) {
 
         if (event.target == document.getElementById("phit1")) {
             var randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
+            console.log(randomDamage);
+
+            switch (createdChar1.item) {
+                case "sword":
+                    randomDamage += Math.ceil(randomDamage * 0.3);
+                    console.log(randomDamage);
+                    break;
+            }
+
             createdChar2.currenthealth -= randomDamage;
             healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
 
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
 
-        } else {
+        } else if (event.target == document.getElementById("phit2")) {
+            var randomDamage = Math.floor(Math.random() * (createdChar2.maxDamage - createdChar2.min + 1) + createdChar2.min);
+            console.log(randomDamage);
+            switch (createdChar2.item) {
+                case "sword":
+                    randomDamage += Math.ceil(randomDamage * 0.3);
+                    console.log(randomDamage);
+                    break;
+            }
+
+            createdChar1.currenthealth -= randomDamage;
+            healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
+
+            document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
+            document.getElementById("bar1").style.width = healthPercentage1 + "%";
+
 
         }
 
