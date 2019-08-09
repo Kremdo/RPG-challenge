@@ -78,8 +78,19 @@ export default function Person(race, item) {
         if (event.target == document.getElementById("phit1")) {
 
             if (createdChar1.race == "vampires") {
+                createdChar1.currenthealth = createdChar1.currenthealth + Math.floor(createdChar2.currenthealth * 0.1);
                 createdChar2.currenthealth = createdChar2.currenthealth - Math.floor(createdChar2.currenthealth * 0.1);
-                
+                healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
+                console.log(createdChar1.currenthealth);
+                console.log(createdChar2.currenthealth);
+                if (createdChar1.currenthealth > createdChar1.maxHealth) {
+                    createdChar1.currenthealth = createdChar1.maxHealth;
+                    healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
+                                       
+                };
+                console.log(createdChar1.currenthealth);
+                document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
+                document.getElementById("bar1").style.width = healthPercentage1 + "%";
             }
             
             //calculate random damage between max and min
@@ -129,8 +140,14 @@ export default function Person(race, item) {
             createdChar2.currenthealth -= randomDamage;
             healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
 
+
+    
+
+
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
+
+
 
             //check if player 2 hits button
         } else if (event.target == document.getElementById("phit2")) {
@@ -189,10 +206,9 @@ export default function Person(race, item) {
 
 
         }
-
+        
     };
-
-
+    
     this.totalDamage = this.damage();
 
     displayChar(this.race, this.item, this.maxHealth);
