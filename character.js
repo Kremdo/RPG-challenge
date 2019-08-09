@@ -18,7 +18,7 @@ export default function Person(race, item) {
     this.min = 3;
     this.maxDamage = 20;
     this.maxHealing = 30;
-
+    
 
     //healing function
     this.heal = function () {
