@@ -68,15 +68,26 @@ export default function Person(race, item) {
     };
 
     this.damage = function () {
-
+        var chance = Math.random();
         if (event.target == document.getElementById("phit1")) {
             var randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
             console.log(randomDamage);
 
+
             switch (createdChar1.item) {
                 case "sword":
                     randomDamage += Math.ceil(randomDamage * 0.3);
-                    console.log(randomDamage);
+                    break;
+
+            }
+
+            switch (createdChar2.item) {
+                case "boots":
+                    if (chance < 0.3) {
+                        randomDamage = 0;
+                        console.log(chance);
+                        console.log("player 2 dogded!");
+                    }
                     break;
             }
 
@@ -89,10 +100,21 @@ export default function Person(race, item) {
         } else if (event.target == document.getElementById("phit2")) {
             var randomDamage = Math.floor(Math.random() * (createdChar2.maxDamage - createdChar2.min + 1) + createdChar2.min);
             console.log(randomDamage);
+
             switch (createdChar2.item) {
                 case "sword":
                     randomDamage += Math.ceil(randomDamage * 0.3);
                     console.log(randomDamage);
+                    break;
+            }
+
+            switch (createdChar1.item) {
+                case "boots":
+                    if (chance < 0.3) {
+                        randomDamage = 0;
+                        console.log(chance);
+                        console.log("player 1 dogded!");
+                    }
                     break;
             }
 
