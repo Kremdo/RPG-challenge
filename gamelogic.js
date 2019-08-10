@@ -10,12 +10,20 @@ var p2Name;
 var healthPercentage1;
 var healthPercentage2;
 
+
 //added click event to the create button
 document.getElementById("createbtn").addEventListener("click", create);
 
 
 
 function create() {
+    var phit1 = document.getElementById("phit1");
+    var pheal1 = document.getElementById("pheal1");
+    var pyield1 = document.getElementById("pyield1");
+    var phit2 = document.getElementById("phit2");
+    var pheal2 = document.getElementById("pheal2");
+    var pyield2 = document.getElementById("pyield2");
+
     //running functions to get required values
     raceFunctionOne();
     itemFunctionOne();
@@ -37,14 +45,29 @@ function create() {
     document.getElementById("pName2").innerHTML += p2Name;
 
     //adding click event to action buttons of players
-    document.getElementById("phit1").addEventListener("click", createdChar1.damage);
-    document.getElementById("pheal1").addEventListener("click", createdChar1.heal);
-    document.getElementById("pyield1").addEventListener("click", pyield);
+    phit1.addEventListener("click", createdChar1.damage);
+    pheal1.addEventListener("click", createdChar1.heal);
+    pyield1.addEventListener("click", pyield);
 
+    document.getElementById("coinTossbtn").addEventListener("click", coinToss);
 
-    document.getElementById("phit2").addEventListener("click", createdChar2.damage);
-    document.getElementById("pheal2").addEventListener("click", createdChar2.heal);
-    document.getElementById("pyield2").addEventListener("click", pyield);
+    phit2.addEventListener("click", createdChar2.damage);
+    pheal2.addEventListener("click", createdChar2.heal);
+    pyield2.addEventListener("click", pyield);
+
+    phit1.disabled = true;
+    phit1.classList.add("disabledHit");
+    pheal1.disabled = true;
+    pheal1.classList.add("disabledHeal");
+    pyield1.disabled = true;
+    pyield1.classList.add("disabledYield");
+
+    phit2.disabled = true;
+    phit2.classList.add("disabledHit");
+    pheal2.disabled = true;
+    pheal2.classList.add("disabledHeal");
+    pyield2.disabled = true;
+    pyield2.classList.add("disabledYield");
 
 
     //adding race picture
@@ -62,7 +85,7 @@ function create() {
     }
 
     //-webkit-transform: scaleX(-1);
- // transform: scaleX(-1);
+    // transform: scaleX(-1);
 
     switch (chosenRace2) {
         case "humans":
@@ -138,15 +161,46 @@ function create() {
             document.getElementById("item2pic").src = "images/bow.jpeg";
             break;
     }
+
+    function coinToss() {
+        var toss = Math.random();
+        if (toss < 0.5) {
+            phit1.disabled = false;
+            phit1.classList.remove("disabledHit");
+            phit1.classList.add("hit");
+
+            pheal1.disabled = false;
+            phit1.classList.remove("disabledHeal");
+            pheal1.classList.add("heal");
+
+            pyield1.disabled = false;
+            phit1.classList.remove("disabledYield");
+            pyield1.classList.add("yield");
+        } else {
+            phit2.disabled = false;
+            phit2.classList.remove("disabledHit");
+            phit2.classList.add("hit");
+
+            pheal2.disabled = false;
+            pheal2.classList.remove("disabledHeal");
+            pheal2.classList.add("heal");
+
+            pyield2.disabled = false;
+            pyield2.classList.remove("disabledYield");
+            pyield2.classList.add("yield");
+        }
+        document.getElementById("coinTossbtn").style.display = "none";
+        console.log(toss);
+    }
 }
 
 
-function pyield () {
+function pyield() {
     if (event.target == document.getElementById("pyield1")) {
-        alert (p1Name + " yields" + "..." + p2Name + " WINS!");
+        alert(p1Name + " yields" + "..." + p2Name + " WINS!");
         document.location.reload();
     } else if (event.target == document.getElementById("pyield2")) {
-        alert (p2Name + " yields" + "..." + p1Name + " WINS!");
+        alert(p2Name + " yields" + "..." + p1Name + " WINS!");
         document.location.reload();
     }
 

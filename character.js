@@ -7,6 +7,12 @@ import {
 
 var healthPercentage1;
 var healthPercentage2;
+var phit1 = document.getElementById("phit1");
+var pheal1 = document.getElementById("pheal1");
+var pyield1 = document.getElementById("pyield1");
+var phit2 = document.getElementById("phit2");
+var pheal2 = document.getElementById("pheal2");
+var pyield2 = document.getElementById("pyield2");
 
 
 //Use this script to generate your character
@@ -53,6 +59,9 @@ export default function Person(race, item) {
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.height = healthPercentage1 + "%";
+
+            disableP1EnableP2();
+
             //making sure player 2 pushes his heal button
         } else {
             var randomHealValue = Math.floor(Math.random() * (createdChar2.maxHealing - createdChar2.min + 1) + createdChar2.min);
@@ -75,6 +84,8 @@ export default function Person(race, item) {
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
             document.getElementById("pic2").style.width = healthPercentage2 + "%";
             document.getElementById("pic2").style.height = healthPercentage2 + "%";
+
+            disableP2EnableP1();
         }
 
     };
@@ -185,6 +196,7 @@ export default function Person(race, item) {
                 alert(p2Name + " is knocked out!\n" + p1Name + " wins");
                 location.reload();
             }
+            disableP1EnableP2();
 
             //check if player 2 hits button
         } else if (event.target == document.getElementById("phit2")) {
@@ -291,14 +303,63 @@ export default function Person(race, item) {
                 location.reload();
             }
 
-
+            disableP2EnableP1();
         }
 
 
     }
 
+    function disableP1EnableP2() {
+        phit1.disabled = true;
+        phit1.classList.remove("hit")
+        phit1.classList.add("disabledHit");
 
+        pheal1.disabled = true;
+        pheal1.classList.remove("heal")
+        pheal1.classList.add("disabledHeal");
 
+        pyield1.disabled = true;
+        pyield1.classList.remove("yield")
+        pyield1.classList.add("disabledYield");
+
+        phit2.disabled = false;
+        phit2.classList.remove("disabledHit");
+        phit2.classList.add("hit");
+
+        pheal2.disabled = false;
+        pheal2.classList.remove("disabledHeal");
+        pheal2.classList.add("heal");
+
+        pyield2.disabled = false;
+        pyield2.classList.remove("disabledYield");
+        pyield2.classList.add("yield");
+    }
+
+    function disableP2EnableP1() {
+        phit2.disabled = true;
+        phit2.classList.remove("hit")
+        phit2.classList.add("disabledHit");
+
+        pheal2.disabled = true;
+        pheal2.classList.remove("heal")
+        pheal2.classList.add("disabledHeal");
+
+        pyield2.disabled = true;
+        pyield2.classList.remove("yield")
+        pyield2.classList.add("disabledYield");
+
+        phit1.disabled = false;
+        phit1.classList.remove("disabledHit");
+        phit1.classList.add("hit");
+
+        pheal1.disabled = false;
+        pheal1.classList.remove("disabledHeal");
+        pheal1.classList.add("heal");
+
+        pyield1.disabled = false;
+        pyield1.classList.remove("disabledYield");
+        pyield1.classList.add("yield");
+    }
     this.totalDamage = this.damage();
 
     displayChar(this.race, this.item, this.maxHealth);

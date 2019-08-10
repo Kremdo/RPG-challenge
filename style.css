@@ -1,39 +1,47 @@
-body, #bg {
-    background-color:#030303;
+body,
+#bg {
+    background-color: #030303;
     color: #b50208;
     font-family: 'Lacquer', sans-serif;
-    
+
 }
+
 h1 {
     font-size: 56px;
     margin: 0;
     margin-bottom: 20px;
 }
-#player1, #player2 {
+
+#player1,
+#player2 {
     visibility: hidden;
-    background: radial-gradient(#121213, #454747,);
+    background: radial-gradient(#121213, #454747, );
     width: 350px;
     height: 500px;
     font-size: 22px;
     justify-content: center;
 }
+
 div {
     display: flex;
     justify-content: center;
     align-content: center;
 }
+
 #container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: radial-gradient(#434344, #141414);
-} 
+}
+
 #card {
     width: 70%;
     justify-self: center;
 }
 
-header, footer {
+header,
+footer {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -43,30 +51,43 @@ header, footer {
     font-weight: bold;
     font-size: 24px;
 }
+
 header {
-    display:none;
+    display: none;
 }
+
 #card {
     display: flex;
     margin: auto;
     width: 80%;
 }
-#player1Name, #item1, #race1, #player2Name, #item2, #race2 {
+
+#player1Name,
+#item1,
+#race1,
+#player2Name,
+#item2,
+#race2 {
     border-radius: 8px;
 }
-#stat1, #stat2 {
+
+#stat1,
+#stat2 {
     display: flex;
     flex-direction: column;
     font-size: 22px;
 }
 
-.buttons, #img1, #img2 {
+.buttons,
+#img1,
+#img2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
     align-self: center;
 }
+
 button {
     color: white;
     border-radius: 10px;
@@ -74,6 +95,7 @@ button {
     margin: 5px;
     font-family: 'Lacquer', sans-serif;
 }
+
 button.hit {
     background: radial-gradient(red, #700f0a);
     border: 1px solid #4f0702;
@@ -82,6 +104,7 @@ button.hit {
     font-size: 26px;
     font-family: 'Lacquer', sans-serif;
 }
+
 button.heal {
     background: radial-gradient(#31c908, #208704);
     border: 1px solid #165704;
@@ -90,7 +113,9 @@ button.heal {
     font-size: 17px;
     font-family: 'Lacquer', sans-serif;
 }
-button.yield, #play {
+
+button.yield,
+#play {
     background: radial-gradient(#8d8f91, #2a2a2b);
     border: 1px solid #07304d;
     width: 50px;
@@ -98,12 +123,53 @@ button.yield, #play {
     font-size: 14px;
     font-family: 'Lacquer', sans-serif;
 }
+
+#coinTossbtn {
+    border-radius: 5px;
+    background: radial-gradient(#FF99FF, #CC0099);
+    border: 1px solid #CC0099;
+    width: 100px;
+    height: 60px;
+    justify-self: center;
+    font-size: 24px;
+
+}
+
+.disabledHit {
+    background: #E0E0E0;
+    border: 1px solid #E0E0E0;
+    width: 70px;
+    height: 40px;
+    font-size: 26px;
+    font-family: 'Lacquer', sans-serif;
+}
+
+.disabledHeal {
+    background: #E0E0E0;
+    border: 1px solid #E0E0E0;
+    width: 60px;
+    height: 30px;
+    font-size: 17px;
+    font-family: 'Lacquer', sans-serif;
+}
+
+.disabledYield {
+    background: #E0E0E0;
+    border: 1px solid #E0E0E0;
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+    font-family: 'Lacquer', sans-serif;
+}
+
 #arena {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-#player1 > div:first-child, #player2 > div:first-child {
+
+#player1 > div:first-child,
+#player2 > div:first-child {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -118,26 +184,31 @@ h4 {
     margin-bottom: 8px;
     color: linen;
 }
-#progress1, #progress2 {
+
+#progress1,
+#progress2 {
     width: 71%;
     height: 30px;
     background-color: grey;
     justify-content: flex-start;
     border-radius: 8px;
-  }
-  
-#bar1, #bar2 {
+}
+
+#bar1,
+#bar2 {
     width: 100%;
     height: 30px;
     background-color: #4CAF50;
-    text-align: center; /* To center it horizontally (if you want) */
-    line-height: 30px; /* To center it vertically */
-    color: white; 
+    text-align: center;
+    /* To center it horizontally (if you want) */
+    line-height: 30px;
+    /* To center it vertically */
+    color: white;
     font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 8px;
-  }
-  
+}
+
 #play {
     border-radius: 50%;
     width: 100px;
@@ -145,22 +216,27 @@ h4 {
     align-self: center;
     font-size: 42px;
 }
-#pic1, #pic2 {
+
+#pic1,
+#pic2 {
     border-radius: 50%;
     width: 300px;
     height: 300px;
     margin-top: 20px;
 }
+
 #item1pic {
     width: 60px;
     height: 60px;
     margin: 0;
 }
+
 #item2pic {
     width: 60px;
     height: 60px;
     margin: 0;
 }
+
 #createbtn {
     border-radius: 5px;
     background: radial-gradient(#31c908, #208704);
@@ -170,6 +246,7 @@ h4 {
     justify-self: center;
     font-size: 26px;
 }
+
 legend {
     color: #c5c9c9;
 }
