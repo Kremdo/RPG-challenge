@@ -10,6 +10,8 @@ h1 {
     font-size: 56px;
     margin: 0;
     margin-bottom: 20px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #cf0404, 0 0 30px #cf0404, 0 0 40px #cf0404, 0 0 55px #cf0404, 0 0 75px #ff0080;
+
 }
 
 #player1,
@@ -25,7 +27,7 @@ h1 {
 div {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
 #container {
@@ -33,6 +35,7 @@ div {
     flex-direction: column;
     justify-content: space-between;
     background: radial-gradient(#434344, #141414);
+    z-index: 1;
 }
 
 #card {
@@ -45,6 +48,7 @@ footer {
     width: 80%;
     display: flex;
     flex-direction: row;
+    flex: auto;
     justify-content: space-between;
     align-items: center;
     background: radial-gradient(#434344, #141414);
@@ -124,15 +128,27 @@ button.yield,
     font-family: 'Lacquer', sans-serif;
 }
 
-#coinTossbtn {
-    border-radius: 5px;
-    background: radial-gradient(#FF99FF, #CC0099);
-    border: 1px solid #CC0099;
+.coinTossbtn {
+    border-radius: 50%;
+    background-image: url("images/coin1.png");
+    background-size: contain;
+    border: 1px solid rgb(65, 38, 2);
     width: 100px;
-    height: 60px;
+    height: 100px;
+    margin:auto;
     justify-self: center;
     font-size: 24px;
-
+    justify-content: center;
+    align-content: center;
+    /*use if bg needs to be blurred*/
+    z-index: 10;
+}
+#coinTossbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
 }
 
 .disabledHit {
@@ -168,15 +184,12 @@ button.yield,
     justify-content: center;
 }
 
-#player1 > div:first-child,
-#player2 > div:first-child {
+.health {
     display: flex;
     flex-direction: column;
-    width: 80%;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
-    margin: 0;
 }
 
 h4 {
@@ -238,11 +251,11 @@ h4 {
 }
 
 #createbtn {
-    border-radius: 5px;
+    border-radius: 50%;
     background: radial-gradient(#31c908, #208704);
-    border: 1px solid #165704;
+    border: 1px solid #421e01;
     width: 100px;
-    height: 60px;
+    height: 100px;
     justify-self: center;
     font-size: 26px;
 }

@@ -52,13 +52,13 @@ export default function Person(race, item) {
 
             }
 
-            if (createdChar1.currenthealth < 30) {
-                document.getElementById("bar1").style.backgroundColor = "red";
-            }
+            
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.height = healthPercentage1 + "%";
+
+            barColorChange();
 
             disableP1EnableP2();
 
@@ -78,12 +78,15 @@ export default function Person(race, item) {
             if (createdChar2.currenthealth > createdChar2.maxHealth) {
                 createdChar2.currenthealth = createdChar2.maxHealth;
                 healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
-
             }
+            
+
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
             document.getElementById("pic2").style.width = healthPercentage2 + "%";
             document.getElementById("pic2").style.height = healthPercentage2 + "%";
+
+            barColorChange();
 
             disableP2EnableP1();
         }
@@ -93,7 +96,6 @@ export default function Person(race, item) {
     this.damage = function () {
         //calculate var for all chance percentages
         var chance = Math.random();
-
 
 
         //check if player 1 pushes button
@@ -110,11 +112,13 @@ export default function Person(race, item) {
                 };
                 document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                 document.getElementById("bar1").style.width = healthPercentage1 + "%";
+                document.getElementById("pic1").style.width = healthPercentage1 + "%";
+                document.getElementById("pic1").style.height = healthPercentage1 + "%";
+                barColorChange();
             }
 
             //calculate random damage between max and min
             var randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
-
 
 
 
@@ -136,6 +140,7 @@ export default function Person(race, item) {
 
                             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
                             document.getElementById("bar2").style.width = healthPercentage2 + "%";
+                            barColorChange();
 
                             i++;
 
@@ -172,12 +177,18 @@ export default function Person(race, item) {
                     healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth)
                     document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                     document.getElementById("bar1").style.width = healthPercentage1 + "%";
+                    document.getElementById("pic1").style.width = healthPercentage1 + "%";
+                    document.getElementById("pic1").style.height = healthPercentage1 + "%";
+                    barColorChange();
 
                 } else {
                     createdChar2.currenthealth -= randomDamage;
                     healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
                     document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
                     document.getElementById("bar2").style.width = healthPercentage2 + "%";
+                    document.getElementById("pic2").style.width = healthPercentage2 + "%";
+                    document.getElementById("pic2").style.height = healthPercentage2 + "%";
+                    barColorChange();
                 }
             }
 
@@ -186,16 +197,19 @@ export default function Person(race, item) {
             document.getElementById("pic2").style.width = healthPercentage2 + "%";
             document.getElementById("pic2").style.height = healthPercentage2 + "%";
 
+            barColorChange();
+
             //check if player 2 hits 0 hp and pronounce winner is so
             if (createdChar2.currenthealth <= 0) {
-                createdChar2.currenthealth = 0;
-                healthPercentage2 = 0;
-                document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
-                document.getElementById("bar2").style.width = healthPercentage2 + "%";
+                //createdChar2.currenthealth = 0;
+                //healthPercentage2 = 0;
+                document.getElementById("bar2").innerHTML = "0";
+                document.getElementById("bar2").style.width = "0%";
 
-                alert(p2Name + " is knocked out!\n" + p1Name + " wins");
+                alert(p2Name + " is knocked out!\n" + p1Name + " wins!");
                 location.reload();
             }
+          
             disableP1EnableP2();
 
             //check if player 2 hits button
@@ -215,6 +229,9 @@ export default function Person(race, item) {
                 };
                 document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
                 document.getElementById("bar2").style.width = healthPercentage2 + "%";
+                document.getElementById("pic2").style.width = healthPercentage2 + "%";
+                document.getElementById("pic2").style.height = healthPercentage2 + "%";
+                barColorChange();
             }
 
 
@@ -235,7 +252,10 @@ export default function Person(race, item) {
                             healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
 
                             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
-                            document.getElementById("bar1").style.width = healthPercentage2 + "%";
+                            document.getElementById("bar1").style.width = healthPercentage1 + "%";
+                            document.getElementById("pic1").style.width = healthPercentage1 + "%";
+                            document.getElementById("pic1").style.height = healthPercentage1 + "%";
+                            barColorChange();
 
                             i++;
 
@@ -276,12 +296,18 @@ export default function Person(race, item) {
                     healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth)
                     document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
                     document.getElementById("bar2").style.width = healthPercentage2 + "%";
+                    document.getElementById("pic2").style.width = healthPercentage2 + "%";
+                    document.getElementById("pic2").style.height = healthPercentage2 + "%";
+                    barColorChange();
 
                 } else {
                     createdChar1.currenthealth -= randomDamage;
                     healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
                     document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                     document.getElementById("bar1").style.width = healthPercentage1 + "%";
+                    document.getElementById("pic1").style.width = healthPercentage1 + "%";
+                    document.getElementById("pic1").style.height = healthPercentage1 + "%";
+                    barColorChange();
                     console.log("P1 curr health" + createdChar1.currenthealth);
                 }
             }
@@ -291,15 +317,18 @@ export default function Person(race, item) {
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.height = healthPercentage1 + "%";
+            barColorChange();
 
             //check if player 1 hits 0 hp and pronounce winner is so
             if (createdChar1.currenthealth <= 0) {
-                createdChar1.currenthealth = 0;
-                healthPercentage1 = 0;
-                document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
-                document.getElementById("bar1").style.width = healthPercentage1 + "%";
+                //createdChar1.currenthealth = 0;
+                //healthPercentage1 = 0;
+                document.getElementById("bar1").innerHTML = "0";
+                document.getElementById("bar1").style.width = "0%";
+                //review below function
+               // playAudio("sounds/smash.wav");
 
-                alert(p1Name + " is knocked out!\n" + p2Name + " wins");
+                alert(p1Name + " is knocked out!\n" + p2Name + " wins!");
                 location.reload();
             }
 
@@ -360,6 +389,25 @@ export default function Person(race, item) {
         pyield1.classList.remove("disabledYield");
         pyield1.classList.add("yield");
     }
+
+    function barColorChange() {
+        //progress bar turns red if health is <= 30 or green if >30 - check both players
+        if (createdChar2.currenthealth <= 30) {
+            document.getElementById("bar2").style.backgroundColor = "red";
+        } else if (createdChar2.currenthealth > 30) {
+            document.getElementById("bar2").style.backgroundColor = "#4CAF50";
+        } 
+        if (createdChar1.currenthealth <= 30) {
+            document.getElementById("bar1").style.backgroundColor = "red";
+        } else if (createdChar1.currenthealth > 30) {
+            document.getElementById("bar1").style.backgroundColor = "#4CAF50";
+        }
+    }
+
+    //function playAudio(x) {
+   //     x.play()
+   // }
+
     this.totalDamage = this.damage();
 
     displayChar(this.race, this.item, this.maxHealth);

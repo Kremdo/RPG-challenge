@@ -23,6 +23,9 @@ function create() {
     var phit2 = document.getElementById("phit2");
     var pheal2 = document.getElementById("pheal2");
     var pyield2 = document.getElementById("pyield2");
+    
+    //adds filter to the bg
+    //document.getElementById("container").style.filter = "brightness(40%)";
 
     //running functions to get required values
     raceFunctionOne();
@@ -74,7 +77,7 @@ function create() {
     switch (chosenRace1) {
         case "humans":
             document.getElementById("pic1").src = "images/human.png";
-            document.getElementById("pic1").style.transform = "scaleX(-1";
+            document.getElementById("pic1").style.transform = "scaleX(-1)";
             break;
         case "elves":
             document.getElementById("pic1").src = "images/elf.jpeg";
@@ -93,7 +96,7 @@ function create() {
             break;
         case "elves":
             document.getElementById("pic2").src = "images/elf.jpeg";
-            document.getElementById("pic2").style.transform = "scaleX(-1";
+            document.getElementById("pic2").style.transform = "scaleX(-1)";
             break;
         case "vampires":
             document.getElementById("pic2").src = "images/vampire.jpeg";
@@ -106,7 +109,7 @@ function create() {
         createdChar1.currenthealth = 100 + ((100 * 40) / 100);
         healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
         document.getElementById("pic1").src = "images/orc.jpeg";
-        document.getElementById("pic1").style.transform = "scaleX(-1";
+        document.getElementById("pic1").style.transform = "scaleX(-1)";
         document.getElementById("progress1").style.width = "100%";
 
 
@@ -120,6 +123,7 @@ function create() {
         createdChar2.currenthealth = 100 + ((100 * 40) / 100);
         document.getElementById("pic2").src = "images/orc.jpeg";
         document.getElementById("progress2").style.width = "100%";
+        
     } else {
         createdChar2.currenthealth = 100;
     }
@@ -164,6 +168,8 @@ function create() {
 
     function coinToss() {
         var toss = Math.random();
+        //removes the filter from the background
+        //document.getElementById("container").style.filter = "brightness(100%)";
         if (toss < 0.5) {
             phit1.disabled = false;
             phit1.classList.remove("disabledHit");
