@@ -51,6 +51,7 @@ function create() {
     switch (chosenRace1) {
         case "humans":
             document.getElementById("pic1").src = "images/human.png";
+            document.getElementById("pic1").style.transform = "scaleX(-1";
             break;
         case "elves":
             document.getElementById("pic1").src = "images/elf.jpeg";
@@ -60,12 +61,16 @@ function create() {
             break;
     }
 
+    //-webkit-transform: scaleX(-1);
+ // transform: scaleX(-1);
+
     switch (chosenRace2) {
         case "humans":
             document.getElementById("pic2").src = "images/human.png";
             break;
         case "elves":
             document.getElementById("pic2").src = "images/elf.jpeg";
+            document.getElementById("pic2").style.transform = "scaleX(-1";
             break;
         case "vampires":
             document.getElementById("pic2").src = "images/vampire.jpeg";
@@ -78,6 +83,7 @@ function create() {
         createdChar1.currenthealth = 100 + ((100 * 40) / 100);
         healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
         document.getElementById("pic1").src = "images/orc.jpeg";
+        document.getElementById("pic1").style.transform = "scaleX(-1";
         document.getElementById("progress1").style.width = "100%";
 
 
@@ -134,6 +140,7 @@ function create() {
     }
 }
 
+
 function pyield () {
     if (event.target == document.getElementById("pyield1")) {
         alert (p1Name + " yields" + "..." + p2Name + " WINS!");
@@ -142,7 +149,14 @@ function pyield () {
         alert (p2Name + " yields" + "..." + p1Name + " WINS!");
         document.location.reload();
     }
+
 }
+
+$("#card").flip({
+    axis: 'x',
+    trigger: 'click',
+    reverse: false
+});
 
 
 

@@ -42,8 +42,14 @@ export default function Person(race, item) {
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
 
             }
+
+            if (createdChar1.currenthealth < 30) {
+                document.getElementById("bar1").style.backgroundColor = "red";
+            }
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
+            document.getElementById("pic1").style.width = healthPercentage1 + "%";
+            document.getElementById("pic1").style.height = healthPercentage1 + "%";
             //making sure player 2 pushes his heal button
         } else {
             var randomHealValue = Math.floor(Math.random() * (createdChar2.maxHealing - createdChar2.min + 1) + createdChar2.min);
@@ -64,6 +70,8 @@ export default function Person(race, item) {
             }
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
+            document.getElementById("pic2").style.width = healthPercentage2 + "%";
+            document.getElementById("pic2").style.height = healthPercentage2 + "%";
         }
 
     };
@@ -173,7 +181,8 @@ export default function Person(race, item) {
 
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
-           
+            document.getElementById("pic2").style.width = healthPercentage2 + "%";
+            document.getElementById("pic2").style.height = healthPercentage2 + "%";
 
     
 
@@ -277,9 +286,19 @@ export default function Person(race, item) {
 
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
+            document.getElementById("pic1").style.width = healthPercentage1 + "%";
+            document.getElementById("pic1").style.height = healthPercentage1 + "%";
 
 
         }
+
+        /*if (createdChar1.currenthealth <= 0) {
+            createdChar1.currenthealth = 0;
+            healthPercentage1 = 0;
+            document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
+            document.getElementById("bar1").style.width = healthPercentage1 + "%";
+            alert (p1Name);
+        }*/
         
     };
     

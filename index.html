@@ -7,88 +7,91 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RPG-challenge</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div>
-        <h1>RPG-challenge</h1>
+        <h1>Clash of the Races</h1>
     </div>
 
     <div id="container">
-        <header id="header">
-            <div class="buttons">
-                <button id="phit1" class="hit">hit</button>
-                <button id="pheal1" class="heal">heal</button>
-                <button id="pyield1" class="yield">yield</button>
-            </div>
-            <div id=stat1>
-                <span id="pName1">Name: </span>
-                <span id="pRace1">Race: </span>
-                <span id="pItem1">Items: </span>
-            </div>
-            <div id=stat2>
-                <span id="pName2">Name: </span>
-                <span id="pRace2">Race: </span>
-                <span id="pItem2">Items: </span>
-            </div>
-            <div class="buttons">
-                <button id="phit2" class="hit">hit</button>
-                <button id="pheal2" class="heal">heal</button>
-                <button id="pyield2" class="yield">yield</button>
-            </div>
-        </header>
-        <footer id="footer">
-            <div class="create">
-                <form action="">
-                    <fieldset>
-                        <legend>Player1 setup:</legend>
-                        Choose name:<br>
-                        <input id="player1Name" type="text" name="firstname" placeholder="choose your name" maxlength="10"><br>
-                        <label>Item:</label>
-                        <select id="item1">
-                            <option value="boots">boots</option>
-                            <option value="staff">staff</option>
-                            <option value="sword">sword</option>
-                            <option value="bow">bow</option>
-                        </select><br>
+        <div id="card">
+            <header id="header" class="back">
+                <div class="buttons">
+                    <button id="phit1" class="hit">hit</button>
+                    <button id="pheal1" class="heal">heal</button>
+                    <button id="pyield1" class="yield">yield</button>
+                </div>
+                <div id=stat1>
+                    <span id="pName1">Name: </span>
+                    <span id="pRace1">Race: </span>
+                    <span id="pItem1">Items: </span>
+                </div>
+                <div id=stat2>
+                    <span id="pName2">Name: </span>
+                    <span id="pRace2">Race: </span>
+                    <span id="pItem2">Items: </span>
+                </div>
+                <div class="buttons">
+                    <button id="phit2" class="hit">hit</button>
+                    <button id="pheal2" class="heal">heal</button>
+                    <button id="pyield2" class="yield">yield</button>
+                </div>
+            </header>
+            <footer id="footer" class="front">
+                <div class="create">
+                    <form action="">
+                        <fieldset>
+                            <legend>Player1 setup:</legend>
+                            Choose name:<br>
+                            <input id="player1Name" type="text" name="firstname" placeholder=" choose your name" maxlength="10"><br>
+                            <label>Item:</label>
+                            <select id="item1">
+                                <option value="boots">boots</option>
+                                <option value="staff">staff</option>
+                                <option value="sword">sword</option>
+                                <option value="bow">bow</option>
+                            </select><br>
 
-                        <label>Race:</label>
-                        <select id="race1">
-                            <option value="humans">humans</option>
-                            <option value="orcs">orcs</option>
-                            <option value="elves">elves</option>
-                            <option value="vampires">vampires</option>
-                        </select>
+                            <label>Race:</label>
+                            <select id="race1">
+                                <option value="humans">humans</option>
+                                <option value="orcs">orcs</option>
+                                <option value="elves">elves</option>
+                                <option value="vampires">vampires</option>
+                            </select>
 
-                    </fieldset>
-                </form>
-            </div>
-            <button id="createbtn" type="button" value="Create">Create</button>
-            <div class="create">
-                <form action="">
-                    <fieldset>
-                        <legend>Player2 setup:</legend>
-                        Choose name:<br>
-                        <input id="player2Name" type="text" name="firstname" placeholder="choose your name" maxlength="10"><br>
-                        <label>Item:</label>
-                        <select id="item2">
-                            <option value="boots">boots</option>
-                            <option value="staff">staff</option>
-                            <option value="sword">sword</option>
-                            <option value="bow">bow</option>
-                        </select><br>
+                        </fieldset>
+                    </form>
+                </div>
+                <button id="createbtn" type="button" value="Create">Create</button>
+                <div class="create">
+                    <form action="">
+                        <fieldset>
+                            <legend>Player2 setup:</legend>
+                            Choose name:<br>
+                            <input id="player2Name" type="text" name="firstname" placeholder=" choose your name" maxlength="10"><br>
+                            <label>Item:</label>
+                            <select id="item2">
+                                <option value="boots">boots</option>
+                                <option value="staff">staff</option>
+                                <option value="sword">sword</option>
+                                <option value="bow">bow</option>
+                            </select><br>
 
-                        <label>Race:</label>
-                        <select id="race2">
-                            <option value="humans">humans</option>
-                            <option value="orcs">orcs</option>
-                            <option value="elves">elves</option>
-                            <option value="vampires">vampires</option>
-                        </select>
-                    </fieldset>
-                </form>
-            </div>
-        </footer>
+                            <label>Race:</label>
+                            <select id="race2">
+                                <option value="humans">humans</option>
+                                <option value="orcs">orcs</option>
+                                <option value="elves">elves</option>
+                                <option value="vampires">vampires</option>
+                            </select>
+                        </fieldset>
+                    </form>
+                </div>
+            </footer>
+        </div>
         <section id="arena">
             <section id="player1">
                 <div>
@@ -124,4 +127,6 @@
     </div>
     <script type="module" src="gamelogic.js"></script>
     <script type="module" src="character.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js">
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js">
 </body></html>

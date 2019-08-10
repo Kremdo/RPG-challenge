@@ -1,37 +1,58 @@
 body, #bg {
-    background-color:#1c6191;
-    color: white;
+    background-color:#030303;
+    color: #b50208;
+    font-family: 'Lacquer', sans-serif;
+    
 }
-
+h1 {
+    font-size: 56px;
+    margin: 0;
+    margin-bottom: 20px;
+}
 #player1, #player2 {
     visibility: hidden;
-    background: radial-gradient(#83bee6, #206899);
-    width: 40%;
-    height: 40%;
+    background: radial-gradient(#121213, #454747,);
+    width: 350px;
+    height: 500px;
     font-size: 22px;
+    justify-content: center;
 }
 div {
     display: flex;
     justify-content: center;
+    align-content: center;
 }
 #container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: radial-gradient(#83bee6, #206899);
+    background: radial-gradient(#434344, #141414);
 } 
+#card {
+    width: 70%;
+    justify-self: center;
+}
 
 header, footer {
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: radial-gradient(#83bee6, #206899);
+    background: radial-gradient(#434344, #141414);
     font-weight: bold;
     font-size: 24px;
 }
 header {
     display:none;
+}
+#card {
+    display: flex;
+    margin: auto;
+    width: 80%;
+}
+#player1Name, #item1, #race1, #player2Name, #item2, #race2 {
+    border-radius: 8px;
 }
 #stat1, #stat2 {
     display: flex;
@@ -51,13 +72,15 @@ button {
     border-radius: 10px;
     font-weight: bold;
     margin: 5px;
+    font-family: 'Lacquer', sans-serif;
 }
 button.hit {
     background: radial-gradient(red, #700f0a);
     border: 1px solid #4f0702;
     width: 70px;
     height: 40px;
-    font-size: 20px;
+    font-size: 26px;
+    font-family: 'Lacquer', sans-serif;
 }
 button.heal {
     background: radial-gradient(#31c908, #208704);
@@ -65,13 +88,15 @@ button.heal {
     width: 60px;
     height: 30px;
     font-size: 17px;
+    font-family: 'Lacquer', sans-serif;
 }
 button.yield, #play {
-    background: radial-gradient(#206899, #83bee6);
+    background: radial-gradient(#8d8f91, #2a2a2b);
     border: 1px solid #07304d;
     width: 50px;
     height: 30px;
     font-size: 14px;
+    font-family: 'Lacquer', sans-serif;
 }
 #arena {
     display: flex;
@@ -85,19 +110,20 @@ button.yield, #play {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
+    margin: 0;
 }
-#player1 > div:first-child {
-    display: flex;
-    justify-content: flex-end;
-}
+
 h4 {
     margin: 0;
+    margin-bottom: 8px;
+    color: linen;
 }
 #progress1, #progress2 {
     width: 71%;
     height: 30px;
     background-color: grey;
     justify-content: flex-start;
+    border-radius: 8px;
   }
   
 #bar1, #bar2 {
@@ -108,6 +134,8 @@ h4 {
     line-height: 30px; /* To center it vertically */
     color: white; 
     font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 8px;
   }
   
 #play {
@@ -115,23 +143,20 @@ h4 {
     width: 100px;
     height: 100px;
     align-self: center;
-    font-size: 32px;
+    font-size: 42px;
 }
 #pic1, #pic2 {
     border-radius: 50%;
-    background-color: grey;
     width: 300px;
     height: 300px;
     margin-top: 20px;
 }
 #item1pic {
-    
     width: 60px;
     height: 60px;
     margin: 0;
 }
 #item2pic {
-    
     width: 60px;
     height: 60px;
     margin: 0;
@@ -140,9 +165,10 @@ h4 {
     border-radius: 5px;
     background: radial-gradient(#31c908, #208704);
     border: 1px solid #165704;
-    width: 60px;
-    height: 40px;
+    width: 100px;
+    height: 60px;
     justify-self: center;
+    font-size: 26px;
 }
 legend {
     color: #c5c9c9;
