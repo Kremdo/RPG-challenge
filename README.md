@@ -2,9 +2,10 @@
 https://kremdo.github.io/RPG-challenge/
 
 **To Do:**
-  * finish the move & log function
+  * finish the move & log function - done
   * add progress bar animation (check link https://www.youtube.com/watch?v=7x_nkGdEc7g)
   * edit item images bg
+  * change ratio of vampire image
 
 **Issues:**
   * image should not increase upon first attack
