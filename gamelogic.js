@@ -168,7 +168,7 @@ function create() {
 
     function coinToss() {
         var toss = Math.random();
-        //removes the filter from the background
+        //removes the filter from the background  - to do 
         //document.getElementById("container").style.filter = "brightness(100%)";
         if (toss < 0.5) {
             phit1.disabled = false;
@@ -195,8 +195,9 @@ function create() {
             pyield2.classList.remove("disabledYield");
             pyield2.classList.add("yield");
         }
-        document.getElementById("coinTossbtn").style.display = "none";
-        console.log(toss);
+        document.getElementById("coinTossbtn").innerHTML = "";
+        document.getElementById("coinTossbtn").className = "log";
+        document.getElementById("coinTossbtn").removeEventListener("click", coinToss);
     }
 }
 

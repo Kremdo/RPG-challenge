@@ -13,6 +13,11 @@ var pyield1 = document.getElementById("pyield1");
 var phit2 = document.getElementById("phit2");
 var pheal2 = document.getElementById("pheal2");
 var pyield2 = document.getElementById("pyield2");
+var who;
+var what;
+var result;
+const moveLog = document.getElementById("coinTossbtn");
+let i = 1;
 
 
 //Use this script to generate your character
@@ -49,14 +54,14 @@ export default function Person(race, item) {
             if (createdChar1.currenthealth > createdChar1.maxHealth) {
                 createdChar1.currenthealth = createdChar1.maxHealth;
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
-
             }
-
             
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.height = healthPercentage1 + "%";
+
+            moveAndLog(p1Name, "heals", healingValue);
 
             barColorChange();
 
@@ -86,6 +91,8 @@ export default function Person(race, item) {
             document.getElementById("pic2").style.width = healthPercentage2 + "%";
             document.getElementById("pic2").style.height = healthPercentage2 + "%";
 
+            moveAndLog(p2Name, "heals", healingValue);
+
             barColorChange();
 
             disableP2EnableP1();
@@ -105,21 +112,22 @@ export default function Person(race, item) {
                 createdChar1.currenthealth = createdChar1.currenthealth + Math.floor(createdChar2.currenthealth * 0.1);
                 createdChar2.currenthealth = createdChar2.currenthealth - Math.floor(createdChar2.currenthealth * 0.1);
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
+
                 if (createdChar1.currenthealth > createdChar1.maxHealth) {
                     createdChar1.currenthealth = createdChar1.maxHealth;
                     healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
-
                 };
+
                 document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                 document.getElementById("bar1").style.width = healthPercentage1 + "%";
                 document.getElementById("pic1").style.width = healthPercentage1 + "%";
                 document.getElementById("pic1").style.height = healthPercentage1 + "%";
                 barColorChange();
+                console.log(moveAndLog);
             }
 
             //calculate random damage between max and min
             var randomDamage = Math.floor(Math.random() * (createdChar1.maxDamage - createdChar1.min + 1) + createdChar1.min);
-
 
 
             //check what item player 1 is holding
@@ -196,6 +204,8 @@ export default function Person(race, item) {
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
             document.getElementById("pic2").style.width = healthPercentage2 + "%";
             document.getElementById("pic2").style.height = healthPercentage2 + "%";
+
+            moveAndLog(p1Name, "hit", randomDamage);
 
             barColorChange();
 
@@ -317,6 +327,7 @@ export default function Person(race, item) {
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.height = healthPercentage1 + "%";
+            moveAndLog(p2Name, "hit", randomDamage);
             barColorChange();
 
             //check if player 1 hits 0 hp and pronounce winner is so
@@ -402,6 +413,40 @@ export default function Person(race, item) {
         } else if (createdChar1.currenthealth > 30) {
             document.getElementById("bar1").style.backgroundColor = "#4CAF50";
         }
+    }
+
+    
+    //function to log the moves and damage
+    function moveAndLog (who, what, result) {
+        
+        if ( what == "heals" ) {
+            moveLog.innerHTML += i +" " + who + " heals +" + result + ".<br>";
+        } else if ( what == "hit") {     
+            moveLog.innerHTML += i + ". " + who + " " + what + ".<br>";    
+            if(who == p1Name) { 
+                who = p2Name;
+                if (result === 0) {
+                    moveLog.innerHTML += who + " dodged.<br>";
+                } else if (createdChar1.race != "vampires") {
+                    moveLog.innerHTML += who + " took -" + result + " damage.<br>";
+                } else if (createdChar1.race == "vampires") {
+                    moveLog.innerHTML += who + " took -" + result + " damage and lost extra 10.<br>";
+                }
+
+            } else if (who == p2Name) {
+                who = p1Name;
+                if (result === 0) {
+                    moveLog.innerHTML += who + " dodged.<br>";
+                } else if (createdChar2.race != "vampires") {
+                    moveLog.innerHTML += who + " took -" + result + " damage.<br>";
+                } else if (createdChar2.race == "vampires") {
+                    moveLog.innerHTML += who + " took -" + result + " damage and lost extra 10.<br>";
+                }
+            } 
+        }
+        
+        //moveLog.style.textAlign = "right"; - this shoul alter between right and left 
+        i++;
     }
 
     //function playAudio(x) {
