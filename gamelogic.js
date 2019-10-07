@@ -211,43 +211,43 @@ function pyield() {
     if (event.target == document.getElementById("pyield1")) {
         alert(p1Name + " yields" + "..." + p2Name + " WINS!");
         document.location.reload();
-        TTS(p1Name + " yields" + "..." + p2Name + " WINS!");
+        // TTS(p1Name + " yields" + "..." + p2Name + " WINS!");
     } else if (event.target == document.getElementById("pyield2")) {
         alert(p2Name + " yields" + "..." + p1Name + " WINS!");
         document.location.reload();
-        TTS(p2Name + " yields" + "..." + p1Name + " WINS!");
+        // TTS(p2Name + " yields" + "..." + p1Name + " WINS!");
     }
 
 }
 
 
 
-//TTS function
+//TTS function - doesn't work ?
 
-function TTS(utterance) {
-    if ('speechSynthesis' in window) {
-        console.log("speech synthesis is supported ");
-        var synth = speechSynthesis;
-        var flag = false;
-        var utterance;
-        if (!flag) {
-            flag = true;
-            utterance = new SpeechSynthesisUtterance(x);
-            utterance.voice = synth.getVoices()[1];
-            utterance.pitch = 0.2;
-            utterance.onend = function() {
-                flag = false;
-            };
-            synth.speak(utterance);
-        }
-        if (synth.paused) { /* unpause/resume narration */
-            synth.resume();
-        }
-    } else {
-        console.log("speech synthesis not supported ");
-    }
+// function TTS(utterance) {
+//     if ('speechSynthesis' in window) {
+//         console.log("speech synthesis is supported ");
+//         var synth = speechSynthesis;
+//         var flag = false;
+//         var utterance;
+//         if (!flag) {
+//             flag = true;
+//             utterance = new SpeechSynthesisUtterance(x);
+//             utterance.voice = synth.getVoices()[1];
+//             utterance.pitch = 0.2;
+//             utterance.onend = function() {
+//                 flag = false;
+//             };
+//             synth.speak(utterance);
+//         }
+//         if (synth.paused) { /* unpause/resume narration */
+//             synth.resume();
+//         }
+//     } else {
+//         console.log("speech synthesis not supported ");
+//     }
 
-}
+// }
 
 
 
