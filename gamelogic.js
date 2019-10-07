@@ -1,4 +1,4 @@
-import Person from "/character.js";
+import Person from "./character.js";
 var chosenRace1;
 var chosenItem1;
 var chosenRace2;
@@ -17,7 +17,7 @@ var utterance;
 
 //added click event to the create button
 document.getElementById("createbtn").addEventListener("click", create);
-document.getElementById("createbtn").addEventListener("click", TTS(x));
+// document.getElementById("createbtn").addEventListener("click", TTS(x));
 
 
 
@@ -28,7 +28,7 @@ function create() {
     var phit2 = document.getElementById("phit2");
     var pheal2 = document.getElementById("pheal2");
     var pyield2 = document.getElementById("pyield2");
-    
+
     //adds filter to the bg
     //document.getElementById("container").style.filter = "brightness(40%)";
 
@@ -128,7 +128,7 @@ function create() {
         createdChar2.currenthealth = 100 + ((100 * 40) / 100);
         document.getElementById("pic2").src = "images/orc.jpeg";
         document.getElementById("progress2").style.width = "100%";
-        
+
     } else {
         createdChar2.currenthealth = 100;
     }
@@ -219,34 +219,35 @@ function pyield() {
     }
 
 }
- 
 
 
-   //TTS function
-//     function TTS(x) {
-//         if ('speechSynthesis' in window) {
-//             console.log( "speech synthesis is supported ");
-//             var synth = speechSynthesis;
-//             var flag = false;
-//             var utterance;
-//             if(!flag){
-//                 flag = true;
-//                 utterance = new SpeechSynthesisUtterance(x);
-//                 utterance.voice = synth.getVoices()[1];
-//                 utterance.pitch = 0.2;  
-//                 utterance.onend = function(){
-//                     flag = false;
-//                 };
-//                 synth.speak(utterance);
-//             }
-//             if(synth.paused) { /* unpause/resume narration */
-//                 synth.resume();
-//             }
-//         } else {
-//             console.log( "speech synthesis not supported ");
-//         }
-    
-// }
+
+//TTS function
+
+function TTS(utterance) {
+    if ('speechSynthesis' in window) {
+        console.log("speech synthesis is supported ");
+        var synth = speechSynthesis;
+        var flag = false;
+        var utterance;
+        if (!flag) {
+            flag = true;
+            utterance = new SpeechSynthesisUtterance(x);
+            utterance.voice = synth.getVoices()[1];
+            utterance.pitch = 0.2;
+            utterance.onend = function() {
+                flag = false;
+            };
+            synth.speak(utterance);
+        }
+        if (synth.paused) { /* unpause/resume narration */
+            synth.resume();
+        }
+    } else {
+        console.log("speech synthesis not supported ");
+    }
+
+}
 
 
 

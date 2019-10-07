@@ -1,9 +1,9 @@
 import {
     createdChar1
-} from "/gamelogic.js";
+} from "./gamelogic.js";
 import {
     createdChar2
-} from "/gamelogic.js";
+} from "./gamelogic.js";
 
 var healthPercentage1;
 var healthPercentage2;
@@ -36,7 +36,7 @@ export default function Person(race, item) {
     var p2Name = document.getElementById("player2Name").value;
 
     //healing function
-    this.heal = function () {
+    this.heal = function() {
         //making sure player 1 hits his heal button
         if (event.target == document.getElementById("pheal1")) {
             var randomHealValue = Math.floor(Math.random() * (createdChar1.maxHealing - createdChar1.min + 1) + createdChar1.min);
@@ -56,7 +56,7 @@ export default function Person(race, item) {
                 createdChar1.currenthealth = createdChar1.maxHealth;
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
             }
-            
+
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.width = healthPercentage1 + "%";
@@ -85,7 +85,7 @@ export default function Person(race, item) {
                 createdChar2.currenthealth = createdChar2.maxHealth;
                 healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
             }
-            
+
 
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
@@ -101,10 +101,10 @@ export default function Person(race, item) {
 
     };
 
-    this.damage = function () {
+    this.damage = function() {
         //calculate var for all chance percentages
         var chance = Math.random();
-       
+
 
         //check if player 1 pushes button
         if (event.target == document.getElementById("phit1")) {
@@ -116,12 +116,12 @@ export default function Person(race, item) {
                 }
                 createdChar2.currenthealth -= Math.floor(createdChar2.currenthealth * 0.1);
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
-                
+
                 document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                 document.getElementById("bar1").style.width = healthPercentage1 + "%";
                 document.getElementById("pic1").style.width = healthPercentage1 + "%";
                 document.getElementById("pic1").style.height = healthPercentage1 + "%";
-                
+
                 barColorChange();
                 console.log(moveAndLog);
             }
@@ -186,7 +186,7 @@ export default function Person(race, item) {
                     document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                     document.getElementById("bar1").style.width = healthPercentage1 + "%";
                     document.getElementById("pic1").style.width = healthPercentage1 + "%";
-                    document.getElementById("pic1").style.height = healthPercentage1 + "%";                   
+                    document.getElementById("pic1").style.height = healthPercentage1 + "%";
 
                 } else {
                     createdChar2.currenthealth -= randomDamage;
@@ -214,7 +214,7 @@ export default function Person(race, item) {
                 location.reload();
                 TTS(p2Name + " is knocked out!\n" + p1Name + " wins!");
             }
-          
+
             disableP1EnableP2();
 
             //check if player 2 hits button
@@ -223,7 +223,7 @@ export default function Person(race, item) {
             var randomDamage = Math.floor(Math.random() * (createdChar2.maxDamage - createdChar2.min + 1) + createdChar2.min);
 
             if (createdChar2.race == "vampires") {
-                createdChar2.currenthealth +=  Math.floor(createdChar1.currenthealth * 0.1);
+                createdChar2.currenthealth += Math.floor(createdChar1.currenthealth * 0.1);
                 if (createdChar2.currenthealth > createdChar2.maxHealth) {
                     createdChar2.currenthealth = createdChar2.maxHealth;
                 }
@@ -234,7 +234,7 @@ export default function Person(race, item) {
                 document.getElementById("bar2").style.width = healthPercentage2 + "%";
                 document.getElementById("pic2").style.width = healthPercentage2 + "%";
                 document.getElementById("pic2").style.height = healthPercentage2 + "%";
-                
+
                 barColorChange();
             }
 
@@ -315,7 +315,7 @@ export default function Person(race, item) {
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.height = healthPercentage1 + "%";
-            
+
             moveAndLog(p2Name, "hit", randomDamage);
             barColorChange();
 
@@ -326,7 +326,7 @@ export default function Person(race, item) {
                 document.getElementById("bar1").innerHTML = "0";
                 document.getElementById("bar1").style.width = "0%";
                 //review below function
-               // playAudio("sounds/smash.wav");
+                // playAudio("sounds/smash.wav");
 
                 alert(p1Name + " is knocked out!\n" + p2Name + " wins!");
                 location.reload();
@@ -397,7 +397,7 @@ export default function Person(race, item) {
             document.getElementById("bar2").style.backgroundColor = "red";
         } else if (createdChar2.currenthealth > 30) {
             document.getElementById("bar2").style.backgroundColor = "#4CAF50";
-        } 
+        }
         if (createdChar1.currenthealth <= 30) {
             document.getElementById("bar1").style.backgroundColor = "red";
         } else if (createdChar1.currenthealth > 30) {
@@ -405,32 +405,32 @@ export default function Person(race, item) {
         }
     }
 
-    
+
     //function to log the moves and damage
-    function moveAndLog (who, what, result) {
-        
-        if ( what == "heals" ) {
-            moveLog.innerHTML += i +" " + who + " heals +" + result + ".<br>";
-        } else if ( what == "hit") {     
-            moveLog.innerHTML += i + ". " + who + " " + what + ".<br>";    
-            if(who == p1Name) { 
+    function moveAndLog(who, what, result) {
+
+        if (what == "heals") {
+            moveLog.innerHTML += i + " " + who + " heals +" + result + ".<br>";
+        } else if (what == "hit") {
+            moveLog.innerHTML += i + ". " + who + " " + what + ".<br>";
+            if (who == p1Name) {
                 who = p2Name;
-                if (result === 0 && createdChar2.race == "elves" ) {
+                if (result === 0 && createdChar2.race == "elves") {
                     moveLog.innerHTML += who + " reflected the attack and<br>";
                     who = p1Name;
                     console.log(who);
                     moveLog.innerHTML += who + " took -" + (Math.ceil(randomDamage * 0.5)) + " damage.<br>";
-                } else if (result === 0 && createdChar2.race != "elves") {   
+                } else if (result === 0 && createdChar2.race != "elves") {
                     moveLog.innerHTML += who + " dodged.<br>";
-                
-              //  } else if (createdChar2.race == "elves" ){
 
-             //   }
+                    //  } else if (createdChar2.race == "elves" ){
+
+                    //   }
                 } else if (createdChar1.race != "vampires") {
                     moveLog.innerHTML += who + " took -" + result + " damage.<br>";
                 } else if (createdChar1.race == "vampires") {
                     moveLog.innerHTML += who + " took -" + result + " damage and lost extra 10.<br>";
-                } 
+                }
 
             } else if (who == p2Name) {
                 who = p1Name;
@@ -445,19 +445,19 @@ export default function Person(race, item) {
                     moveLog.innerHTML += who + " took -" + result + " damage.<br>";
                 } else if (createdChar2.race == "vampires") {
                     moveLog.innerHTML += who + " took -" + result + " damage and lost extra 10.<br>";
-                } 
-            } 
+                }
+            }
         }
-        
+
         //moveLog.style.textAlign = "right"; - this shoul alter between right and left 
         i++;
     }
 
-//  try to USE for .. in !!!!
+    //  try to USE for .. in !!!!
 
     //function playAudio(x) {
-   //     x.play()
-   // }
+    //     x.play()
+    // }
 
     this.totalDamage = this.damage();
 

@@ -20,7 +20,7 @@
             <header id="header" class="back">
                 <div class="buttons">
                     <button id="phit1" onclick="responsiveVoice.speak('You will die!','US English Male', {pitch: 0.2},{rate: 0.9});">hit</button>
-                    <button id="pheal1"onclick="responsiveVoice.speak('Wait a second!','US English Male', {pitch: 0.2},{rate: 0.9});">heal</button>
+                    <button id="pheal1" onclick="responsiveVoice.speak('Wait a second!','US English Male', {pitch: 0.2},{rate: 0.9});">heal</button>
                     <button id="pyield1" onclick="responsiveVoice.speak('Oh, OK you win!','US English Male', {pitch: 0.2},{rate: 0.9});">yield</button>
                 </div>
                 <div id=stat1>
@@ -72,7 +72,7 @@
                         <fieldset>
                             <legend>Player2 setup:</legend>
                             Choose name:<br>
-                            <input id="player2Name" ><br>
+                            <input id="player2Name"><br>
                             <label>Item:</label>
                             <select id="item2">
                                 <option value="boots">boots</option>
@@ -102,8 +102,8 @@
                     </div>
                 </div>
                 <div id="img1">
-                    <div id="piccontainer1"><img id="pic1" src="images/" alt=""></div>
-                    <div><img id="item1pic" src="images/" alt=""></div>
+                    <div id="piccontainer1"><img id="pic1" src="images/human.png" alt=""></div>
+                    <div><img id="item1pic" src="images/boots.jpeg" alt=""></div>
                 </div>
 
             </section>
@@ -116,8 +116,8 @@
                     </div>
                 </div>
                 <div id="img2">
-                    <div id="piccontainer2"><img id="pic2" src="images/" alt=""></div>
-                    <div><img id="item2pic" src="images/" alt=""></div>
+                    <div id="piccontainer2"><img id="pic2" src="images/human.png" alt=""></div>
+                    <div><img id="item2pic" src="images/boots.jpeg" alt=""></div>
                 </div>
 
             </section>
@@ -125,9 +125,10 @@
 
     </div>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=kuD6HXow"></script>
-    <script type="module" src="gamelogic.js"></script>
-    <script type="module" src="character.js"></script>
+    <script type="module" src="./gamelogic.js"></script>
+    <script type="module" src="./character.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-            </body>
-            </html>
+</body>
+
+</html>
