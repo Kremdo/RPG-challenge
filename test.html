@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MVC</title>
+</head>
+<body>
+
+    <h1>TEST</h1>
+    <div><button id=play>Play text</button></div>
+    <!-- <button id=pause></button>
+    <button id=stop></button> -->
+    
+
+    <article>
+        <h2>This is a test</h2>
+        <p>
+            If you hear this then speech synthesis is supported by Google Chrome..
+
+        </p>
+    </article>
+    <br>
+    <br>
+   <h2>ResponsiveVoice demo</h2>
+<button onclick="responsiveVoice.speak('The Internet is a series of tubes!');" 
+type="button" value="Play">Play</button>
+1
+2
+<button onclick="responsiveVoice.speak('Responsive Voice demo code used here');" 
+type="button" value="Play">Play</button>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=kuD6HXow"></script>
+    <script>
+    onload = function() {
+    if ('speechSynthesis' in window) {
+        console.log( "speech synthesis is supported ");
+    }
+    else {
+       console.log( "speech synthesis not supported ");
+    }
+    }
+
+    if ('speechSynthesis' in window) {
+    var synth = speechSynthesis;
+    var flag = false;
+ 
+    /* references to the buttons */
+    var playEle = document.querySelector('#play');
+    // var pauseEle = document.querySelector('#pause');
+    // var stopEle = document.querySelector('#stop');
+ 
+
+    /* click event handlers for the buttons */
+    playEle.addEventListener('click', onClickPlay);
+    // pauseEle.addEventListener('click', onClickPause);
+    // stopEle.addEventListener('click', onClickStop);
+
+    function onClickPlay() {
+        if(!flag){
+            flag = true;
+            utterance = new SpeechSynthesisUtterance(
+            document.querySelector('article').textContent);
+            utterance.voice = synth.getVoices()[1];
+            utterance.pitch = 0.3;  
+            utterance.onend = function(){
+                flag = false;
+            };
+            synth.speak(utterance);
+        }
+        if(synth.paused) { /* unpause/resume narration */
+            synth.resume();
+        }
+    }
+    // function onClickPause() {
+    //     if(synth.speaking && !synth.paused){ /* pause narration */
+    //         synth.pause();
+    //     }
+    // }
+
+    // function onClickStop() {
+    //     if(synth.speaking){ /* stop narration */
+    //         /* for safari */
+    //         flag = false;
+    //         synth.cancel();
+    //     }
+    // }
+    
+}
+
+    </script>
+    
+</body>
+</html>
+
